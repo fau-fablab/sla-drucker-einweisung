@@ -1,2 +1,2 @@
-TARGET=Einweisung_Tischkreissaege Einweisungsliste_Tischkreissaege
+TARGET=FormLabs_Form2_Einweisung FormLabs_Form2_Einweisungsliste
 include fablab-document/Makefile.include
