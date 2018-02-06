@@ -16,6 +16,8 @@
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{float} % Ermöglicht H als Platzierungsoption
+\usepackage{array} 
+
 \renewcommand{\texteuro}{\euro}
 \newcommand{\fachbegriff}[1]{(\textit{#1})}
 \newcommand{\ts}[1]{\textsuperscript{#1}}
@@ -50,9 +52,37 @@
 		\item Materialwechsel und sonstige Wartung darf nur gemeinsam mit einem Betreuer durchgeführt werden.
 		\item \textbf{Wiegen und Bezahlen nicht vergessen!}
 	\end{itemize}
+
+\section{Warnhinweise}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cc}
+		
+		\includegraphics[width=2cm]{bilder/GHSa.png}  & \includegraphics[width=2cm]{bilder/GHSf.png} \\
+	\end{tabular}
+\end{table}
+
+\begin{itemize}
+	\item \textbf{Achtung:} Das verwendete Kunstharz ist schädlich. Bitte Haut- und Augenkontakt vermeiden \\
+	\item \textbf{Achtung:} Beim Umgang mit Isopropylalkohol für die Nachbehandlung der 3D-Druckteile. Dieses ist schädlich für die Haut und leicht Entflammbar\\
+\end{itemize}
+
+\section{Persönliche Schutzausrüstung}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{cc}
+		
+	 \includegraphics[width=2cm]{bilder/gaugenschutz.png}  & \includegraphics[width=2cm]{bilder/ghandschuh.png} \\
+	\end{tabular}
+\end{table}
+
+\begin{itemize}
+	\item Schutzbrille, unerlässlich bei der Nachbearbeitung der 3D-Druckteile \\
+	\item Schutzhandschuhe bei der Nachbearbeitung der 3D-Druckteile\\
+\end{itemize}
 	\newpage
-	
-	% % % % % % % % % % % % % % % %
+
+% % % % % % %
 	
 	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
 	\setcounter{tocdepth}{2}
