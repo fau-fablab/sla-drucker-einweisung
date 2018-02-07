@@ -116,63 +116,65 @@
 				\hline
 			\end{tabularx}
 		\end{table}
-		\item Die 3D-Daten müssen gewisse Regeln erfüllen. Bei Modellierungsprogrammen wie Blender ist etwas Vorsicht oder Nacharbeit nötig, die meisten Konstruktionsprogramme (Solid Edge und Konsorten, auch OpenSCAD) machen es prinzipbedingt von selber richtig. Zu den Einschränkungen bei Blender stehen am Ende der Anleitung noch weitere Informationen.
 	\end{itemize}
 	
 	\subsection{Einschränkungen der Formen}
 	\begin{itemize}
-			\item \textbf{Maximale Abmessungen}  L:145 B:145 H:175mm
-			\item zur Sicherheit lieber ein paar Millimeter kleiner.
-			\item Es ist in der Praxis meist nicht möglich, den Bauraum des Druckers auch nur annähernd auszunutzen! Wenn möglich, gestalte deine Objekte kleiner als 10x10x5cm (LxBxH).
-		\item \textbf{große Teile dauern ewig}, während des Drucks muss jemand dabeibleiben. Druckzeit für 30x30x30mm sind je
-		nach Präzision etwa 30-45 Minuten, ein größeres Volumen braucht entsprechend länger.
-		\item Durch das Druckverfahren sind gewisse Formen schlecht druckbar. Oft ist Ausprobieren angesagt.
-		\item Damit man auch \enquote{schwierige} Formen drucken kann, kann die Software \textbf{Stützstrukturen} erstellen. Wenn man dies erlaubt,
-		erzeugt der Drucker ein loses Geflecht unter Überhängen und Brücken,
-		das sich nach dem Ausdrucken mit einer Zange oder einem Skalpell entfernen lässt. So kann
-		man diese Begrenzungen umgehen. Nachteil ist die schlechtere
-		Oberflächenqualität und der Nachbereitungs-Aufwand.
+		\item \textbf{Bauraum}\\LxBxH: 145\,mm x 145\,mm x 175\,mm
+		\item \textbf{Große Teile}\\Aufgrund der langen Druckdauer und bisher fehlender Erfahrung mit großen Drucken, empfehlen wir Objekte kleiner als 100x100x50\,$\mathrm{mm}^3$ (LxBxH).
+		\item \textbf{Stützstrukturen}\\Damit Teile sinnvoll gedruckt werden können, müssen Stützstrukturen verwendet werden. Die Software erzeugt hierbei ein loses Geflecht an Verbindungen zu Überhängen und Brücken, die sich nach dem Ausdrucken mit einer Zange oder einem Skalpell entfernen lassen.
+		\item \textbf{Ablösewanne}\\Durch die Verwendung von Stützstrukturen wird automatisch eine sogenannte Ablösewanne unter dem Objekt generiert. Diese erleichtert das Ablösen von der Buildplattform. Auf dem Rand der Ablösewanne wird zusätzlich der Dateiname gedruckt.
 	\end{itemize}
+
+\subsection{Designrichtlinien für SLA Drucke}
+
+Die folgenden Designrichtlinien helfen dir dein 3D Druck für den Form2 zu optimieren und welche Mindestvoraussetzungen für den Formlabs-Drucker gelten.
+
+\textbf{Hinweis:} Die folgenden Richtlinien gelten für das Drucken mit dem transparenten Kunstharz bei 100 $\mathrm{\mu}m$. Bei anderen Kunstharzen und anderen Schichtdicken gibt es möglicherweise Abweichungen.
+
+	\begin{itemize}
+	\item \textbf{Mindestdicke von gestützten Wänden:}  Empfohlen: 0,4 mm\\
+	\\
+	\textbf{Hinweis:}Gehe beim Nachbearbeiten von dünnen Wänden vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen können. Dies kann zu Verformungen führen, deshalb das Modell nur kurz zum waschen eintauchen. \\
+	\item \textbf{Mindestdicke nicht gestützter Wände:}  Empfohlen: 0,6 mm
+	\item \textbf{Maximale Länge nicht gestützter Überhänge:}  Empfohlen: 1,0 mm
+	\item \textbf{Mindestwinkel für nicht gestützte Überhänge:}  Empfohlen: 19$^\circ$ von der Ebene
+	\item \textbf{Maximale horizontale Stützbrücke:}  Empfohlen: 21 mm
+	\item \textbf{Mindestdurchmesser von vertikalen Drähten:}  Empfohlen: 1,5 mm \\
+	\\
+	\textbf{Hinweis:}Gehe beim Nachbearbeiten von vertikalen Drähten vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen und geschwächt werden. Dies kann zu Verformungen oder dem Abbruch des Drahtes führen, deshalb das Modell nur kurz zum waschen eintauchen. \\
+	\item \textbf{Mindestwert für geprägte Details:}  Empfohlen: 0,1 mm
+	\item \textbf{Mindestwert für eingravierte Details:}  Empfohlen: 0,4 mm
+	\item \textbf{Mindestabstand zwischen Objekten:}  Empfohlen: 1 mm
+	\item \textbf{Mindestdurchmesser für Aussparungen:}  Empfohlen: 0,5 mm
+	\item \textbf{Hohlkörper} \\
+	Abflussmöglichkeiten für das verbleibende Kunstharz vorsehen, da dieses im Inneren verbleibt. Aufgrund der Viskosität des Harzes sollten diese Öffnungen einen Durchmesser von mindestens 3,5mm aufweisen.
+	
+\end{itemize}
+
+
 	\newpage
 	
-	% % % % % % % % % % % %
-	
-	\section{Vorbereitung}
-	
-	\subsection{Vorheizen}
-	Vorheizen ist nicht nötig, da es automatisch vor dem Druck geschieht.
-	
-	\subsection{Material auswählen - PLA vs. ABS}
-	Grundsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS benötigt man z.\,B. eine beheiztes
-	Bett, das im Ultimaker Original nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten
-	Anwendungen ist es egal welches Material man verwendet, die Entscheidung richtet sich mehr nach der persönlichen
-	Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
-	
-	\subsubsection{PLA}
-	\begin{itemize}
-		\item Organisches Material, Biokunststoff
-		\item weniger elastisch, wird aber bei 70\textcelsius{} weich
-		\item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90\textcelsius{} aufheizen)
-		\item Drucktemperatur beträgt meistens 210\textcelsius{}. Je nach Material kann sie allerdings variieren.
-	\end{itemize}
-
-	\subsection{Materialwechsel}
-	Wir haben verschiedene Harze auf Lager. Wenn du eine andere möchtest, frag einfach nach.
-	Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Infos für Betreuer $\to$ \ref{filamentwechsel})
-	
-	% % % % % % % % % % % %
-	
 	\section{3D-Modell mit PreForm umwandeln und ausdrucken}
-
+ 
+ \subsection{Preform Vorbereitung}
+ 
 	\begin{itemize}
-		\item Programm PreForm öffnen und Drucker "PrettyTiger" auswählen. und mit "Auswählen bestätigen.
-		\item mit Klick auf den "Datei"\,Dialog und anschließend "öffnen"\,STL-Datei öffnen
-		\item bei Bedarf das Modell mit den Schaltflächen links skalieren, drehen und verschieben.
-		\item notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen.
-		\item der Drucker ist im Netzwerk und wird automatisch von der Software erkannt
-		\item jeder Druck (auch Fehldrucke oder Abbrüche) ist zu wiegen und abzurechnen
-		\item Harztank nicht mit Deckel im Drucker lagern, bei Stromanschluss führt der Drucker einen Selbsttest durch und bewegt den Wischer. Alternative: Sicherstellen dass der Drucker nicht angeschaltet werden kann (z.Bsp. Stecker ziehen)
+		\item Programm PreForm öffnen und Drucker "PrettyTiger"\, auswählen. und mit "Auswählen bestätigen.
+		\item Mit Klick auf den "Datei"\ Dialog und anschließend "Öffnen"\ STL-Datei öffnen.
+		\item Bei Bedarf das Modell mit den Schaltflächen skalieren, drehen und verschieben.
+		\item Notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen.
+		\item Anschließend wird das Teil durch drücken des orangenen Buttons über das Netzwerk an den Drucker gesendet. Hierbei muss ein Name des Drucks eingegeben werden.\\
+		\textbf{Namensgebung:} "Max Mustermann\_E-Mail Adresse\_Dateiname"\ 
+		
+		\item \textbf{Achtung:}Harztank nicht mit Deckel im Drucker lagern, bei Stromanschluss führt der Drucker einen Selbsttest durch und bewegt den Wischer. Alternative: Sicherstellen dass der Drucker nicht angeschaltet werden kann (z.Bsp. Stecker ziehen)
 		\end{itemize}
+	
+	
+	\section{Nachbereitung}
+	\begin{itemize}
+	\item \textbf{Hinweis:}jeder Druck (auch Fehldrucke oder Abbrüche) ist zu wiegen und abzurechnen
+	\end{itemize}
 	
 	\section{Bezahlen und abschließen}
 	
@@ -205,21 +207,7 @@
 	
 	% % % % % % % % % % % % % % %
 	
-	\section{Infos für Experten}
-	
-	\subsection{Experteninfos - Makerware} \label{expinfos}
-	\subsubsection{Preslicing}
-	Preslicing ist beim Druck von SD-Karte nicht notwendig.
-	
-	Wer schon einmal eine komplexere STL-Datei gesliced hat weiß, dass das dauern kann. Und manchmal gehen Drucke schief,
-	oft schon gleich am Anfang. Um jetzt nicht jedes Mal komplett von Null zu beginnen, kann man eine gcode-Dateien erstellen
-	und laden.
-	\begin{itemize}
-		\item zum erstellen bei ''Make`` ''Export to a File`` wählen, nach den Einstellungen auf ''Make It!'' und Datei als \texttt{.gcode} abspeichern
-		\item zum Laden auf ''File`` \ra ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende \texttt{.gcode-Datei} auswählen (Achtung keine Preview!)
-	\end{itemize}
-	
-	\subsection{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
+	\section{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
 	
 	\begin{itemize}
 		\item Einheit \fachbegriff{unit}: Länge, die der Zahl „1“ entsprechen soll (bei uns
@@ -233,50 +221,6 @@
 		\item Polygonnetz \fachbegriff{mesh}: Gesamtheit aller Flächen, die einen Körper
 		ergibt. Alles innerhalb des Netzes soll mit Kunststoff gefüllt werden,
 		alles außerhalb ist Luft.
-	\end{itemize}
-	
-	\subsection{Einschränkungen bei Blender und manchen anderen Programmen} \label{lowlevel-einschraenkungen}
-	
-	Das 3D-Modell muss gewisse Einschränkungen erfüllen, damit die Drucksoftware es versteht. Da man mit Tools wie Blender auch unsinnige Dinge bauen kann (Modelle mit Löchern, unlogische Dinge bei denen innen und außen nicht eindeutig ist), muss auf folgendes geachtet werden.
-	\begin{itemize}
-		\item Wasserdicht: Der Körper muss rundum geschlossen sein, er darf keine
-		Löcher aufweisen,  die Hülle muss ein zusammenhängendes Netz sein.
-		\item Polygonnetz \fachbegriff{mesh} schneidet sich nicht selbst: Verschiedene
-		Körper dürfen sich nicht überlappen. Sie müssen stattdessen zu einem
-		Körper vereinigt werden. In Blender geht dies zum Beispiel mit dem
-		Boolean Modifier.
-		\item Mannigfaltig \fachbegriff{manifold}: Dieser Begriff ist schwierig zu
-		beschreiben. Vereinfacht gesagt dürfen zu jeder Kante nur zwei Flächen
-		gehören. Es dürfen also zum Beispiel keine Flächen innerhalb eines
-		Körpers existieren.
-	\end{itemize}
-	
-	% % % % % % % % % % % % % %
-	
-	\section{Infos für Betreuer}
-	
-	\subsection{Filamentwechsel}\label{filamentwechsel}
-	
-	\subsubsection{Ultimaker}
-	\begin{itemize}
-		\item Extruder muss heiß sein: ''Vorbereiten'' \ra ''Vorwärmen PLA/ABS''
-		\item ''Vorbereiten'' \ra ''Filament wechseln''
-		\item Warten bis komplett herausgefahren
-		\item neues Filament einfädeln und mit etwas Druck dagegen halten
-		\item Mit Knopfdruck bestätigen
-		\item Bis zum extrudieren warten
-		\item evtl. auf ''Extrude mehr''  drücken
-		\item ''Drucke weiter'' drücken \ra Fertig!
-	\end{itemize}
-	Alternativ:
-	\begin{itemize}
-		\item Drucker vorheizen
-		\item ''Prepare``\ra ''Move Axis``\ra ''1 mm`` \ra ''Extruder``
-		\item Filament aus der Düse zurückfahren
-		\item Extruder öffnen
-		\item Filament herausziehen
-		\item neues Filament einfädeln
-		\item ''Extrude``bis Neues Filament extrudiert wird
 	\end{itemize}
 	
 	\subsection{Pflege \& Wartung}
