@@ -49,10 +49,10 @@
 		Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit Name und Kontaktdaten.
 		\item Anleitung exakt beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
 		\item Drucker nach Beendigung des Druckes in Ruhezustand versetzen.
-		\item Materialwechsel, Pflege und Wartung darf nur von einem Betreuer durchgeführt werden.
+		\item Materialwechsel, Pflege und Wartung darf \textbf{nur von einem Betreuer} durchgeführt werden.
 		\item \textbf{Wiegen und Bezahlen nicht vergessen!}
 	\end{itemize}
-
+\newpage
 \section{Warnhinweise}
 \begin{table}[h]
 	\centering
@@ -68,6 +68,9 @@
 	\item \textbf{Achtung:} Beim Umgang mit Isopropylalkohol für die Nachbehandlung der 3D-Druckteile. Dieses ist schädlich für die Haut und leicht Entflammbar\\
 	
 	\item \textbf{Achtung:} Der Harztankträger ist das Heizelement des Harzes und kann während des Druckens sehr heiß werden.
+	
+	\item \textbf{Achtung:}
+	Harztank nicht mit Deckel im Drucker lagern, bei Stromanschluss führt der Drucker einen Selbsttest durch und bewegt den Wischer.
 \end{itemize}
 
 \section{Persönliche Schutzausrüstung}
@@ -167,11 +170,28 @@ Die folgenden Designrichtlinien helfen dir dein 3D Druck für den Form2 zu optim
 		\item Mit Klick auf den "Datei"\ Dialog und anschließend "Öffnen"\ STL-Datei öffnen.
 		\item Bei Bedarf das Modell mit den Schaltflächen skalieren, drehen und verschieben.
 		\item Notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen.
-		\item Anschließend wird das Teil durch drücken des orangenen Buttons über das Netzwerk an den Drucker gesendet. Hierbei muss ein Name des Drucks eingegeben werden.\\
-		\textbf{Namensgebung:} "Max Mustermann\_E-Mail Adresse\_Dateiname"\ 
-		
-		\item \textbf{Achtung:}Harztank nicht mit Deckel im Drucker lagern, bei Stromanschluss führt der Drucker einen Selbsttest durch und bewegt den Wischer. Alternative: Sicherstellen dass der Drucker nicht angeschaltet werden kann (z.Bsp. Stecker ziehen)
-		\end{itemize}
+	\end{itemize}
+
+\subsection{Wahl der Schichtdicke}
+
+\begin{table} [H]
+	\centering
+	\begin{tabular}{|c|c|c|c|}\hline
+	  & 100\,$\mu m$ & 50\,$\mu m$ & 25\,$\mu m $\\ \hline
+	Transparent & \checkmark &\checkmark &\checkmark \\ \hline
+	Flexibel & \checkmark &\checkmark & X\\ \hline
+	\end{tabular}
+\end{table}
+
+Die Wahl der Schichtdicke ist entscheidend für die Dauer der Druckzeit des Objektes. Im Gegensatz zu FDM-3D-Druckern (z.B. Ultimaker) ist die Druckqualität kaum von der Schichtdicke abhängig, außer bei sehr kleinen Objekten. Unsere Empfehlung ist daher die 100\,$\mu m$ Schichtdicke zu verwenden. \\
+Ein Objekt in den Auflösungen von 50\,$\mu m$ oder, falls verfügbar, 25\,$\mu m$ braucht mindestens die doppelte respektive mindestens die vierfache Zeit als unter den empfohlenen Einstellungen.
+		 	
+\subsection{Drucken}
+ \begin{itemize}
+ 	
+		\item Zum Drucken des Objektes die Orange Schaltfläche "Druckeinrichtung"\ öffnen\\
+		\item In diesem Menü ist vor dem Senden der Name der Druckdatei zu deklarieren, hierbei gilt für die Namensgebung "Max\_Mustermann\_E-Mail\_Dateiname"\ 
+\end{itemize}
 	
 	
 	\section{Nachbereitung}
@@ -198,7 +218,7 @@ Die folgenden Designrichtlinien helfen dir dein 3D Druck für den Form2 zu optim
 
 	\section{Pflege \& Wartung \textcolor{red}{Nur von Betreuer durchzuführen}}
 	
-	\subsection{Ausrichten}
+	\subsection{Ausrichten des Druckers}
 	Der \textit{Form2} muss, um fehlerfrei drucken zu können, nivelliert sein. Hierzu gibt es ein Eintrag im Einstellungsmenü des Druckers.\\
 	Ist der Drucker nicht nivelliert, so ist dieser Menüeintrag auszuwählen und den Anweisungen auf dem Bildschirm zu folgen. Zum justieren wird das runde Nivellierwerkzeug beötigt. Dieses schiebt man unter die jeweilige Ecke und dreht es im Uhrzeigersinn, um den Drucker tiefer, gegen den Uhrzeigersinn, um ihn höher zu stellen.\\
 	Weitere Informationen dazu auf der Supportseite des Herstellers.	\\
