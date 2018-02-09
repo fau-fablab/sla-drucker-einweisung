@@ -63,8 +63,9 @@
 \end{table}
 
 \begin{itemize}
-	\item \textbf{Achtung:} Das verwendete Kunstharz ist schädlich. Bitte Haut- und Augenkontakt vermeiden. \\
-	\item \textbf{Achtung:} Beim Umgang mit Isopropylalkohol für die Nachbehandlung des Druckteils sind Handschuhe zu tragen, denn dieses ist schädlich für die Haut und zudem leicht Entflammbar.\\
+	\item \textbf{Achtung:} Sowohl das verwendete Kunstharz als auch Isopropylalkohol sind gesundheitsschädlich. Bitte Haut- und Augenkontakt, Verschlucken und einatmen der Dämpfe vermeiden. \\
+	\item \textbf{Achtung:} Sowohl beim Umgang mit dem Kunstharz also auch beim Umgang mit Isopropylalkohol für die Nachbehandlung des Druckteils sind Nitrilhandschuhe zu tragen. \\
+	\item \textbf{Achtung:} Isopropylalkohol ist leicht entflammbar. Rauchen und Umgang mit offenen Flammen und Zündquellen sind in der Nähe verboten. \\
 	
 	\item \textbf{Achtung:} Der Harztankträger ist das Heizelement des Harzes und kann während des Druckens heiß werden.
 	
@@ -85,8 +86,9 @@
 \end{table}
 
 \begin{itemize}
-	\item Schutzbrille tragen, unerlässlich bei der Nachbearbeitung der 3D-Druckteile \\
-	\item Schutzhandschuhe bei der Nachbearbeitung der 3D-Druckteile\\
+	\item Bei allen Arbeiten am Drucker und bei der Nachbearbeitung der Teile sind zu tragen:
+	\item \textbf{Schutzbrille} 
+	\item \textbf{Nitrilhandschuhe} \\
 \end{itemize}
 	\newpage
 
@@ -107,7 +109,7 @@
 	\begin{itemize}
 		\item auf \href{https://thingiverse.com}{Thingiverse.com} gibt es viele vorgefertigte Modelle, als
 		Grundlage oder gleich zum fertig ausdrucken.
-		\item oder erstelle es mit einem Programm deiner Wahl
+		\item oder erstelle ein Modell mit einem Programm deiner Wahl
 		\begin{table}[H]
 			\centering
 			\begin{tabularx}{\textwidth}{|l|X|}
@@ -129,33 +131,33 @@
 	
 	\subsection{Einschränkungen der Formen}
 	\begin{itemize}
-		\item \textbf{Bauraum}\\LxBxH: 145\,mm x 145\,mm x 175\,mm
-		\item \textbf{Große Druckteile}\\Aufgrund der langen Druckdauer und bisher fehlender Erfahrung mit großen Drucken, empfehlen wir Objekte kleiner als 100x100x50\,$\mathrm{mm}^3$ (LxBxH).
+		\item \textbf{Bauraum}\\L x B x H: 145\,mm x 145\,mm x 175\,mm
+		\item \textbf{Große Druckteile}\\Aufgrund der langen Druckdauer und bisher fehlender Erfahrung mit großen Drucken, empfehlen wir Objekte kleiner als 100x100x50\,$\mathrm{mm}^3$ (L x B x H).
 		\item \textbf{Stützstrukturen}\\Damit Druckteile sinnvoll gedruckt werden können, müssen Stützstrukturen verwendet werden. Die Software erzeugt hierbei ein loses Geflecht an Verbindungen zu Überhängen und Brücken, die sich nach dem Ausdrucken mit einer Zange oder einem Skalpell entfernen lassen.
 		\item \textbf{Ablösewanne}\\Durch die Verwendung von Stützstrukturen wird automatisch eine sogenannte Ablösewanne unter dem Objekt generiert. Diese erleichtert das Ablösen von der Buildplattform. Auf dem Rand der Ablösewanne wird zusätzlich der Dateiname der STL-Datei gedruckt.
 	\end{itemize}
 
 \subsection{Designrichtlinien für SLA Drucke}
 
-Die folgenden Designrichtlinien helfen dir dein Druckteil für den $Form2$ zu optimieren und beschreiben welche Mindestvoraussetzungen für den Formlabs-Drucker gelten.
+Die folgenden Designrichtlinien helfen dir dein Druckteil für den $Form2$ zu optimieren und beschreiben welche Mindestwerte für den Formlabs-Drucker empfohlen werten. Obwohl das über- bzw. unterschreiten der Werte nicht verboten ist, empfiehlt es sich, dies nur zu tun wenn es ein konkreter Grund erzwingt, und auch dann nur mit Bedacht.  
 
 \textbf{Hinweis:} Die folgenden Richtlinien gelten für das Drucken mit dem transparenten Kunstharz bei 100 $\mathrm{\mu}m$. Bei anderen Kunstharzen und anderen Schichtdicken gibt es möglicherweise Abweichungen.
 
 	\begin{itemize}
-	\item \textbf{Mindestdicke von gestützten Wänden:}  Empfohlen: 0,4 mm\\
+	\item \textbf{Mindestdicke von gestützten Wänden:}  0,4 mm\\
 	\\
-	\textbf{Hinweis:}Gehe beim Nachbearbeiten von dünnen Wänden vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen können. Dies kann zu Verformungen führen, deshalb das Druckteil nur kurz zum waschen eintauchen. \\
-	\item \textbf{Mindestdicke nicht gestützter Wände:}  Empfohlen: 0,6 mm
-	\item \textbf{Maximale Länge nicht gestützter Überhänge:}  Empfohlen: 1,0 mm
-	\item \textbf{Mindestwinkel für nicht gestützte Überhänge:}  Empfohlen: 19$^\circ$ von der Ebene
-	\item \textbf{Maximale horizontale Stützbrücke:}  Empfohlen: 21 mm
-	\item \textbf{Mindestdurchmesser von vertikalen Drähten:}  Empfohlen: 1,5 mm \\
+	\textbf{Hinweis:} Gehe beim Nachbearbeiten von dünnen Wänden vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen können. Dies kann zu Verformungen führen, deshalb das Druckteil nur kurz zum waschen eintauchen. \\
+	\item \textbf{Mindestdicke nicht gestützter Wände:}  0,6 mm
+	\item \textbf{Maximale Länge nicht gestützter Überhänge:}  1,0 mm
+	\item \textbf{Mindestwinkel für nicht gestützte Überhänge:}  19$^\circ$ von der Ebene
+	\item \textbf{Maximale horizontale Stützbrücke:}  21 mm
+	\item \textbf{Mindestdurchmesser von vertikalen Drähten:}  1,5 mm \\
 	\\
 	\textbf{Hinweis:}Gehe beim Nachbearbeiten von vertikalen Drähten vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen und geschwächt werden. Dies kann zu Verformungen oder dem Abbruch des Drahtes führen, deshalb das Modell nur kurz zum waschen eintauchen. \\
-	\item \textbf{Mindestwert für geprägte Details:}  Empfohlen: 0,1 mm
-	\item \textbf{Mindestwert für eingravierte Details:}  Empfohlen: 0,4 mm
-	\item \textbf{Mindestabstand zwischen mehreren Druckteilen:}  Empfohlen: 1 mm
-	\item \textbf{Mindestdurchmesser für Aussparungen:}  Empfohlen: 0,5 mm
+	\item \textbf{Mindestwert für geprägte Details:}  0,1 mm
+	\item \textbf{Mindestwert für eingravierte Details:}  0,4 mm
+	\item \textbf{Mindestabstand zwischen mehreren Druckteilen:}  1 mm
+	\item \textbf{Mindestdurchmesser für Aussparungen:}  0,5 mm
 	\item \textbf{Hohlkörper} \\
 	Abflussmöglichkeiten für das verbleibende Kunstharz vorsehen, da dieses im Inneren verbleibt. Aufgrund der Viskosität des Harzes sollten diese Öffnungen einen Durchmesser von mindestens 3,5\,mm aufweisen.
 	
