@@ -4,7 +4,7 @@ FormLabs Form2 Einweisung
 Einweisung des [FAU FabLab](https://fablab.fau.de) für den Form2 [FormLabs Form2](https://formlabs.com/de/3d-printers/form-2/).
 
 Die neueste Version gibt es hier zum Download als PDF:
-* TODO
+* [PDF Einweisung](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/FormLabs_Form2_Einweisung.pdf)
 
 auschecken
 ----------
