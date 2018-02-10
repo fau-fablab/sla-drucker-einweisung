@@ -13,8 +13,10 @@ auschecken
 git clone --recursive git@github.com:fau-fablab/FormLabs_Form2_Einweisung.git
 ```
 
+Technische Details zum Buildserver siehe auf macgyver /home/buildserver/README
+
 [![Build Status](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisungstatus-todos.svg)](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/)
+[![TODOs](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/)
 
 
 Lizenz
