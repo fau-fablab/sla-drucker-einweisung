@@ -189,7 +189,7 @@ Die folgenden Designrichtlinien helfen dir dein Druckteil für den \textit{Form2
     \begin{tabular}{|c||c|c|c|}\hline
         Harztyp & 100\,$\mu m$ & 50\,$\mu m$ & 25\,$\mu m $\\ \hline\hline
         Transparent & \checkmark & \checkmark & \checkmark \\ \hline
-        Flexibel & \checkmark & \checkmark & X \\ \hline
+        Tough & \checkmark & \checkmark & X \\ \hline
     \end{tabular}
     \caption{Unterstützte Schichtdicken für verschiedene Harze}
     \label{table:supported_layer_thickness_by_resin}
@@ -197,6 +197,26 @@ Die folgenden Designrichtlinien helfen dir dein Druckteil für den \textit{Form2
 
 Die Wahl der Schichtdicke ist entscheidend für die Dauer der Druckzeit des Druckteils. Im Gegensatz zu FDM-3D-Druckern (z.B. Ultimaker) ist die Druckqualität kaum von der Schichtdicke abhängig (außer bei sehr kleinen Objekten). Unsere Empfehlung ist daher die 100\,$\mu m$ Schichtdicke zu verwenden. \\
 Im Vergleich zu 100\,$\mu m$ benötigt ein Druckteil in der Auflösung von 50\,$\mu m$ mindestens doppelt so lange, und ein Druck in der Schichtdicke  25\,$\mu m$ (falls verfügbar) dauert mindestens vier mal so lange.
+
+\subsection{Wahl des Materials}
+
+Im Fablab stehen zwei Materialien zur Auswahl.\\
+\\
+Davon ist eins Transparent, das auch Clear genannt wird, welches das Standardharz für diesen Drucker ist. Es ist Transparent und wird nach dem Polieren fast komplett durchsichtig, es ist ausgezeichnet für interne Kanäle und Arbeiten mit Licht. Es sollte für 15 Minuten bei 60\,$^\circ$C gehärtet werden.\\
+\\
+Das andere ist ein technisches Harz für bessere Stabilität, auch Tough genannt. Es simuliert ABS-Kunststoff und ist geeignet für Anwendungen, die hoher Belastung und Beanspruchung ausgesetzt werden. Optimal für die Fertigung funktionaler Prototypen von Baugruppen, maschinelle Fertigung und Biegeelemente. Es sollte für 60 Minuten bei 60\,$^\circ$C gehärtet werden.
+
+\begin{table} [H]
+	\centering
+	\begin{tabular}{|c||c|c|c|}\hline
+		 & ABS-Kunststoff & Tough & Standard-Harz\\ \hline\hline
+		Modul & 2,5\,GPa & 2,7\,GPa & 2,8\,GPa \\ \hline
+		Dehnung & 18\,\% & 24\,\% &  6,2\,\%\\ \hline
+		Kerbschlagzähigkeit & 234,9\,J/m & 38\,J/m & 25\,J/m \\ \hline
+	\end{tabular}
+	\caption{Mechanische Eigenschaften der Harze}
+	\label{table:MechEigenschaften}
+\end{table}
 
 \subsection{Drucken}
 \begin{itemize}
@@ -264,26 +284,38 @@ Abgerechnet wird das Druckteil am Kassenterminal, hierzu ist das abgelesene Volu
 
 \section{Pflege \& Wartung --- \textcolor{red}{Nur von Betreuer durchzuführen}}
 
+\subsection{Wechseln des Harzes}
+Der \textit{Form2} ist in unserem Aufbau dafür zugelassen, dass das Harz gewechselt werden kann. Dies ist jedoch nur von einem eingewiesenen Betreuer durchzuführen. 
+
+Hierzu muss sichergestellt werden, dass die Druckplattform gereinigt und frei von Kontaminationen ist. Auch soll darauf geachtet werden, dass keine Rückstände von Isopropanol auf der Druckplattform zu finden sind. Als nächstes wird die Kappe von der Harzkartusche geschlossen und die Kartusche am Rückseitigen griff aus dem Drucker hinausgezogen.\\
+Nun muss der schwarze Wischer, auf dem Harztank, durch einen sanften Zug zum Benutzer gelöst werden. Dieser Wischer ist Teil des Harztanks und sollte nicht mit anderen Harzen in Berührung kommen. Anschließend soll der gesamte Harztank gelöst werden, dies indem man links und rechts am Tank greift und, wie zuvor, mit einem Sanften Zug zum Benutzer hin den Tank löst. \\
+Nun holt man den Austauschtank mit einem anderen Harz, dieses befindet sind über dem Platinenbelichter in der Schublade. Während man den Tank entnimmt, ist darauf zu achten, dass dieser nicht gekippt wird und dass man nach dem Öffnen der Pappschachtel die Scheibe an der Unterseite des Tanks nicht berührt. \\
+Nun wechselt man den Tank und die Kartusche für das neue Harz. Der andere Tank kommt wieder in die Pappschachtel und zurück in die Schublade. Die angebrochene Kartusche legt man auf die Längsseite mit dem Deck nach oben gerichtet, um ein auslaufen zu vermeiden, hinter den Drucker selbst. \\
+\\
+Detaillierte Schritte können dem Supportdokument (ab Kapitel 4) entnommen werden. 
+\url{https://support.formlabs.com/s/article/Quick-Start-Guide?language=de}
+
+
 \subsection{Ausrichten des Druckers}
 Der \textit{Form2} muss, um fehlerfrei drucken zu können, nivelliert sein. Hierzu gibt es ein Eintrag im Einstellungsmenü des Druckers.\\
 Ist der Drucker nicht nivelliert, so ist dieser Menüeintrag auszuwählen und den Anweisungen auf dem Bildschirm zu folgen. Zum justieren wird das runde Nivellierwerkzeug benötigt. Dieses schiebt man unter die jeweilige Ecke und dreht es im Uhrzeigersinn um den Drucker tiefer, und gegen den Uhrzeigersinn um ihn höher zu stellen.\\
 Weitere Informationen dazu auf der Supportseite des Herstellers.	\\
-\url{https://support.formlabs.com/hc/de/articles/115000013164-Den-Form-2-nivellierens}
+\url{https://support.formlabs.com/s/article/Level-the-Form-2?language=de}
 
 \subsection{Pflege der Harzkartusche}
 Die Harzkartusche muss ungefähr alle zwei Wochen geschüttelt werden, damit das Kunstharz stets gut durchmischt ist. Dadurch erhöht sich die Druckqualität.
 
 \subsection{Harztank}
-Der Harztank sollte regelmäßig von gereinigt werden. Anleitung dazu auf der Supportseite des Herstellers\\
-\url{https://support.formlabs.com/hc/de/articles/115000016184-Pflege-des-Harztanks}
+Der Harztank (Resin Tabk LT) sollte regelmäßig von gereinigt werden. Anleitung dazu auf der Supportseite des Herstellers\\
+\url{https://support.formlabs.com/s/article/Resin-Tank-LT-Maintenance-and-Care?language=de}
 
 \subsection{Glasfenster}
-Zur Reinigung des Glasfensters unter dem Harztanks bei Verschmutzung durch Schlieren oder Fingerabdrücken siehe:\\ \url{https://support.formlabs.com/hc/de/articles/115000016204-Reinigung-des-optischen-Glasfensters}
+Zur Reinigung des Glasfensters unter dem Harztanks bei Verschmutzung durch Schlieren oder Fingerabdrücken siehe:\\ \url{https://support.formlabs.com/s/article/Cleaning-the-Glass-Optical-Window-Form2?language=de}
 
 \subsection{Firmwareupdates}
 
 In regelmäßigen Abständen kommt es vor, dass die Firmware des Druckers zu updaten ist. Eine Anleitung findet sich hierbei auf der Website des Herstellers.\\
-\url{https://support.formlabs.com/hc/de/articles/115000013690-Firmwareupdate-durchführen}
+\url{https://support.formlabs.com/s/article/Updating-Form-2-Firmware?language=de}
 
 \ccLicense{FormLabs\_Form2\_Einweisung}{Einweisung FormLabs Form2}
 
