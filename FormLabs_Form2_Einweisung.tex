@@ -190,6 +190,7 @@ Die folgenden Designrichtlinien helfen dir dein Druckteil für den \textit{Form2
         Harztyp & 100\,$\mu m$ & 50\,$\mu m$ & 25\,$\mu m $\\ \hline\hline
         Transparent & \checkmark & \checkmark & \checkmark \\ \hline
         Tough & \checkmark & \checkmark & X \\ \hline
+        Rigid & \checkmark & \checkmark & X \\ \hline
     \end{tabular}
     \caption{Unterstützte Schichtdicken für verschiedene Harze}
     \label{table:supported_layer_thickness_by_resin}
@@ -204,15 +205,17 @@ Im Fablab stehen zwei Materialien zur Auswahl.\\
 \\
 Davon ist eins Transparent, das auch Clear genannt wird, welches das Standardharz für diesen Drucker ist. Es ist Transparent und wird nach dem Polieren fast komplett durchsichtig, es ist ausgezeichnet für interne Kanäle und Arbeiten mit Licht. Es sollte für 15 Minuten bei 60\,$^\circ$C gehärtet werden.\\
 \\
-Das andere ist ein technisches Harz für bessere Stabilität, auch Tough genannt. Es simuliert ABS-Kunststoff und ist geeignet für Anwendungen, die hoher Belastung und Beanspruchung ausgesetzt werden. Optimal für die Fertigung funktionaler Prototypen von Baugruppen, maschinelle Fertigung und Biegeelemente. Es sollte für 60 Minuten bei 60\,$^\circ$C gehärtet werden.
+Das andere ist ein technisches Harz für bessere Stabilität, auch Tough genannt. Es simuliert ABS-Kunststoff und ist geeignet für Anwendungen, die hoher Belastung und Beanspruchung ausgesetzt werden. Optimal für die Fertigung funktionaler Prototypen von Baugruppen, maschinelle Fertigung und Biegeelemente. Es sollte für 60 Minuten bei 60\,$^\circ$C gehärtet werden.\\
+\\ 
+Ein weiteres Material ist Rigid Harz dies ist ein technisches Kunstharz für Steifigkeit und Präzision. Das glasverstärkte Material bietet einen sehr hohen Zugmodul und eine glatte Oberflächenbeschaffenheit. Die Verstärkung durch Glaspulver verleiht Rigid im Vergleich zu den anderen Materialien eine höhere Steifigkeit. Optimal für dünnwandige Objekte und Gehäuse. 
 
 \begin{table} [H]
 	\centering
-	\begin{tabular}{|c||c|c|c|}\hline
-		 & ABS-Kunststoff & Tough & Standard-Harz\\ \hline\hline
-		Modul & 2,5\,GPa & 2,7\,GPa & 2,8\,GPa \\ \hline
-		Dehnung & 18\,\% & 24\,\% &  6,2\,\%\\ \hline
-		Kerbschlagzähigkeit & 234,9\,J/m & 38\,J/m & 25\,J/m \\ \hline
+	\begin{tabular}{|c||c|c|c|c|}\hline
+		 & ABS-Kunststoff & Tough & Standard-Harz & Rigid\\ \hline\hline
+		Modul & 2,5\,GPa & 2,7\,GPa & 2,8\,GPa & 4.1 GPa\\ \hline
+		Dehnung & 18\,\% & 24\,\% &  6,2\,\% & 5,6\,\% \\ \hline
+		Kerbschlagzähigkeit & 234,9\,J/m & 38\,J/m & 25\,J/m & 18,8\,J/m\\ \hline
 	\end{tabular}
 	\caption{Mechanische Eigenschaften der Harze}
 	\label{table:MechEigenschaften}
@@ -237,39 +240,55 @@ Das andere ist ein technisches Harz für bessere Stabilität, auch Tough genannt
 
 \textbf{Hinweis:} Dieser Teil hat sich gegenüber der alten Einweisung massiv geändert. Bitte eine neue Einweisung dazu geben. 
 
-Nach erfolgreichem Druck kann nun mit der Nachbearbeitung des Druckteils begonnen werden.
+Nach erfolgreichem Druck kann nun mit der Nachbearbeitung des Druckteils begonnen werden. Für diesen Zweck stehen nun zwei separate Gerätschaften zur Verfügung, nämlich der Form Wash und der Form Cure. Bei dem erstgenannten Gerät, dem Form Wash, handelt es sich um einen Isopropanol Behältnis mit eingebautem Rührfisch zur Reinigung der Druckteile von nicht verfestigten Herzrückständen. Der Form Cure hingegen ist eine optimierte UV-Aushärtekammer mit zusätzlicher Temperaturregelung. 
 
-\textbf{Hinweis:} Ab diesen Zeitpunkt muss die vorgeschriebene Schutzausrüstung (Schutzbrille, Handschuhe) getragen werden.
+Die Nachbearbeitung ab dem fertigstellen des Druckvorgangs ist dabei wie folgt. 
+
+\textbf{Hinweis:} Ab diesen Zeitpunkt muss die vorgeschriebene Schutzausrüstung (Handschuhe) getragen werden.
 
 \begin{enumerate}
     \item Die ganze Konstruktionsplattform im Form2 lösen.
         \begin{itemize}
-            \item Ein Hebel befindet sich dazu an der Oberseite der Konstruktionsplattform. Diesen nun lösen uund die Qaudratische Druckplattform zu sich hin ziehen und herausnehmen.
+            \item Ein Hebel befindet sich dazu an der Oberseite der Konstruktionsplattform. Diesen nun lösen und die Quadratische Druckplattform zu sich ziehen und dabei herausnehmen.
 	    \item Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
             \item Die Orangene Haube des Druckers wieder verschließen, sonst kann es zudem zu Verunreinigungen des Harzes im Tank kommen.
 	    \item Ggf. eine saubere Druckplatform in den Drucker einlegen, dass eine weitere Person drucken könnte.
         \end{itemize}
-    \item Konstruktionsplattform mit dem gedruckten Teil nach oben in die Haltevorrichtung des Form Wash einschieben.
+    \item Konstruktionsplattform mit dem gedruckten Teil oben in die Haltevorrichtung des Form Wash einlegen. 
+    	 \begin{itemize}
+    		\item Hierzu befinden sich links und rechts im Form Wash Schienen, in der die Konstruktionsplattform aufliegen kann. 
+    	\end{itemize}
+    \item Form Wash nun starten und abwarten.
+    \begin{itemize}
+    	\item Die Standartzeit eines Waschdurchgangs beträgt 20 Minuten.
+    	\item Zum Starten im Menü des Wash START mit dem Dreh-Drück-Taster auswählen und mit einem sanften Druck bestätigen.
+    \end{itemize}
     \item Entfernen des Druckteils mit dem Ablösewerkzeug.
         \begin{itemize}
-            \item Mit dem Ablösewerkzeug unter die angewinkelte Kante der Basis und anschließend hebeln bis sich der Druck löst.
+        	\item Nach Abschluss des Waschdurchgangs fährt die Druckplatform eigenständig aus dem Wash heraus.
+        	\item Im besten Falle das Druckerzeugnis noch etwas hängen lassen, damit sich das Isopropanol vom Druck verflüchtigen kann.
+        	\item Ist die Druckplatform vom Wash entnommen, kann im Menü des Wash die Haltevorrichtung wieder eingefahren werden. Hierzu Sleep auswählen und bestätigen. 
+            \item Mit dem Holzablösewerkzeug unter die angewinkelte Kante der Basis ansetzen und anschließend hebeln bis sich der Druck löst.
             \item \textbf{Hinweis:} Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
+            \item \textbf{Hinweis:} Bitte die Konstruktionsplattform erst wieder in den Drucker einsetzen, sobald diese vollständig von Isopropanolresten gereinigt ist. \textbf{Isopropanol zersetzt das Harz, dies soll deshalb nicht in den Bauraum gelangen.}
         \end{itemize}
-    \item Das gelöste Druckteil im Bad 1 schwenken
+    \item Nachhärtung in dem Form Cure
         \begin{itemize}
-            \item max. 30\,Sekunden
+            \item Hierzu den Druck in den Cure einlegen.
+            \item Das Material nach den gegebenen Parametern aushärten lassen. Hierzu im Menü des Cure die Parameter einstellen und bestätigen.
         \end{itemize}
-    \item Das Druckteil im Bad 2 einweichen
-        \begin{itemize}
-            \item max. 10\,Minuten
-            \item \textbf{Hinweis:} Bei filigranen Teilen diesen Schritt überspringen
-        \end{itemize}
-    \item Nachhärtung
-        \begin{itemize}
-            \item Das Druckteil wird durch den UV-Anteil im Umgebungslicht über die nächsten 24 Stunden komplett aushärten
-            \item Bei Bedarf kann man dieses Aushärten mit Hilfe von UV-Licht beschleunigen, hierbei reichen ca. 15\,Minuten im Belichter
-            \item Erst danach ist die Oberfläche des Drucks als \enquote{ungefährlich} anzusehen.
-        \end{itemize}
+    
+   \begin{table} [H]
+   	\centering
+   	\begin{tabular}{|c||c|c|c|c|}\hline
+   		& Tough & Standard-Harz & Castable & Rigid\\ \hline\hline
+   		Zeit [min]& 60 & 15 & 240 & 15\\ \hline
+   		Temperatur [$\circ$C]& 60 & 60 & 60 & 80 \\ \hline
+   	\end{tabular}
+   	\caption{Aushärtezeit des Materials}
+   	\label{table:AusEigenschaften}
+   \end{table}
+
     \item Entfernen der Stützstrukturen
 
 \end{enumerate}
