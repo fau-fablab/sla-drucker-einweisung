@@ -1,23 +1,23 @@
-FormLabs Form2 Einweisung
+SLA Drucker Einweisung
 =========================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) für den Form2 [FormLabs Form2](https://formlabs.com/de/3d-printers/form-2/).
+Einweisung des [FAU FabLab](https://fablab.fau.de) für den SLA Drucker
 
 Die neueste Version gibt es hier zum Download als PDF:
-* [Einweisung](https://brain.fablab.fau.de/build/FormLabs_Form2_Einweisung/FormLabs_Form2_Einweisung.pdf)
-* [Einweisungsliste](https://brain.fablab.fau.de/build/FormLabs_Form2_Einweisung/FormLabs_Form2_Einweisungsliste.pdf)
+* [Einweisung](https://brain.fablab.fau.de/build/SLA_Drucker_Einweisung/SLA_Drucker_Einweisung.pdf)
+* [Einweisungsliste](https://brain.fablab.fau.de/build/SLA_Drucker_Einweisung/SLA_Drucker_Einweisungsliste.pdf)
 
 auschecken
 ----------
 
 ```bash
-git clone --recursive git@github.com:fau-fablab/FormLabs_Form2_Einweisung.git
+git clone --recursive git@github.com:fau-fablab/SLA_Drucker_Einweisung.git
 ```
 
 Technische Details zum Buildserver siehe auf macgyver /home/buildserver/README
 
-[![Build Status](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/FormLabs_Form2_Einweisung/)
+[![Build Status](https://user.fablab.fau.de/~buildserver/SLA_Drucker_Einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/SLA_Drucker_Einweisung/)
+[![TODOs](https://user.fablab.fau.de/~buildserver/SLA_Drucker_Einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/SLA_Drucker_Einweisung/)
 
 
 Lizenz

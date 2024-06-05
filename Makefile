@@ -1,2 +1,2 @@
-TARGET=FormLabs_Form2_Einweisung FormLabs_Form2_Einweisungsliste
+TARGET=SLA_Drucker_Einweisung SLA_Drucker_Einweisungsliste
 include fablab-document/Makefile.include
