@@ -33,23 +33,25 @@
 
 \maketitle
 \begin{center}
-    Für den 3D-Drucker \textbf{FormLabs Form2}
+    Für LCD basierte SLA 3D-Drucker
 \end{center}
 
-\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
+\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbständig bedienen}, um Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, wende dich an einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht das gewünschte Teil drucken. Wenn du alles verstanden hast, kannst auch du die Einweisung unterschreiben und den Drucker in Zukunft selbstständig benutzen.
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
 
 \section{Regeln und Hinweise}
 % Hier sollte nur das wichtigste gegen "Kaputtmachen" des Druckers stehen.
 Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
 
 \begin{itemize}
-    \item Die Materialien sind gesundheitsschädlich --- \textbf{Schutzbrille und Nitrilhandschuhe tragen!}
-    \item Obwohl das 3D-Drucken unter den Begriff \enquote{Rapid Prototyping} fällt, kann ein Druckteil je nach Größe und
-        Präzision gut mehrere Stunden bis Tage dauern. Betreuer und die Software helfen dir, die Dauer abzuschätzen.
+    \item Obwohl der 3D-Druck unter den Begriff \enquote{Rapid Prototyping} fällt, kann ein gedrucktes Teil je nach Abmessungen durchaus mehrere Stunden in Anspruch nehmen. Betreuer und Software helfen dabei, die Dauer abzuschätzen.
     \item Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit deinem Namen und deinen Kontaktdaten.
     \item Anleitung ist exakt zu beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
-    \item Drucker nach Beendigung des Druckes in Ruhezustand versetzen.
-    \item Materialwechsel, Pflege und Wartung darf \textbf{nur von einem Betreuer} durchgeführt werden.
+    \item Ein Materialwechsel und die Wartung darf \textbf{nur von einem Betreuer} durchgeführt werden.
     \item \textbf{Bezahlen bitte nicht vergessen!}
 \end{itemize}
 %\newpage
@@ -58,24 +60,20 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
     \centering
     \begin{tabular}{ccc}
 
-        \includegraphics[width=2cm]{bilder/GHSa.png}  &
-        \includegraphics[width=2cm]{bilder/GHShs.jpg}  & \includegraphics[width=2cm]{bilder/GHSf.png}
+        \includegraphics[width=2cm]{bilder/GHSa.png}  & \includegraphics[width=2cm]{bilder/GHSf.png}
     \end{tabular}
 \end{table}
 
 \begin{itemize}
-    \item \textbf{Achtung:} Sowohl das verwendete Kunstharz als auch Isopropylalkohol sind gesundheitsschädlich. Bitte Haut- und Augenkontakt, Verschlucken und einatmen der Dämpfe vermeiden.
-    \item \textbf{Achtung:} Sowohl beim Umgang mit dem Kunstharz also auch beim Umgang mit Isopropylalkohol für die Nachbehandlung des Druckteils sind Nitrilhandschuhe zu tragen.
-    \item \textbf{Achtung:} Isopropylalkohol ist leicht entflammbar. Rauchen und Umgang mit offenen Flammen und Zündquellen sind in der Nähe verboten.
-    \item \textbf{Achtung:} Der Harztankträger ist das Heizelement des Harzes und kann während des Druckens heiß werden.
-    \item \textbf{Achtung:} Harztank nicht mit Deckel im Drucker lagern, bei Stromanschluss führt der Drucker einen Selbsttest durch und bewegt den Wischer.
-    \item Ausdrucke sind \textbf{nicht} lebensmittelecht oder biokompatibel, weil sie  auch nach Nachbehandlung noch Spuren des Rohmaterials enthalten können. Trinkbecher oder Armbanduhren sind also keine gute Idee.
+    \item Das eingesetzte Kunstharz und Isopropylalkohol sind gesundheitsschädlich. Haut- und Augenkontakt sowie Verschlucken und Einatmen der Dämpfe vermeiden.
+    \item Zu Ihrer eigenen Sicherheit sollten sowohl beim Umgang mit dem flüssigen Kunstharz als auch beim Umgang mit Isopropylalkohol zur Nachbehandlung des Druckteils Nitrilhandschuhe getragen werden.
+    \item Isopropylalkohol ist leicht entzündlich, daher ist der Umgang mit offenem Feuer und Zündquellen in der Nähe verboten.
+    \item Drucke sind \textbf{nicht lebensmittelecht} oder biokompatibel, da sie auch nach der Weiterverarbeitung noch Spuren des Ausgangsmaterials enthalten können. 
 \end{itemize}
 
 %%%%%%%%%%%
 
 \subsection{Persönliche Schutzausrüstung}
-
 
 \begin{table}[h]
     \centering
@@ -88,17 +86,12 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
 Bei allen Arbeiten am Drucker und bei der Nachbearbeitung der Teile sind zu tragen:
 \begin{itemize}
     \item \textbf{Schutzbrille}
-    \item \textbf{Nitril-Einweghandschuhe}
+    \item \textbf{Einweghandschuhe}
 \end{itemize}
-Erst nach Waschen und Nachbelichten dürfen die Teile auch ohne Handschuhe angefasst werden. Vorher können sich noch Reste des Rohmaterials an der Oberfläche befinden.
+Erst nach dem Waschen und Nachbelichten dürfen die Teile ohne Handschuhe angefasst werden. Vorher können sich noch Reste von unpolymerisiertem Kunststoff auf der Oberfläche befinden.
 \newpage
 
 % % % % % % %
-
-\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
-\setcounter{tocdepth}{2}
-\tableofcontents
-\newpage
 
 % % % % % % % % % % % % % % % %
 \section{3D-Modell erstellen}
@@ -108,8 +101,8 @@ Erst nach Waschen und Nachbelichten dürfen die Teile auch ohne Handschuhe angef
 Im STL-Dateiformat, Einheit: Millimeter. Alle gängigen 3D-Programme haben einen STL-Export.
 
 \begin{itemize}
-    \item auf \href{https://thingiverse.com}{Thingiverse.com} gibt es viele vorgefertigte Modelle, als
-        Grundlage oder gleich zum fertig ausdrucken.
+    \item auf \href{https://thingiverse.com}{Thingiverse.com} oder  \href{https://printables.com}{Printables.com}  gibt es viele vorgefertigte Modelle, als
+        Grundlage oder gleich zum Bereit zum ausdrucken.
     \item oder erstelle ein Modell mit einem Programm deiner Wahl
         \begin{table}[H]
             \centering
@@ -124,37 +117,34 @@ Im STL-Dateiformat, Einheit: Millimeter. Alle gängigen 3D-Programme haben einen
                 \hline & \\
                 \hline \multicolumn{2}{|c|}{\textit{kostenpflichtige Software (proprietär)}}  \\
                 \hline PTC Creo, Solid Edge, Siemens NX & kostenlos beim RRZE für Studenten, professionelle Software \\
-                \hline Autocad Inventor & kostenlos bei Autodesk für Studenten ebenfalls für professionelle Anwendungen \\
+                \hline Autocad Inventor, Fusion 360 & kostenlos bei Autodesk für Studenten ebenfalls für professionelle Anwendungen \\
                 \hline
             \end{tabularx}
         \end{table}
 \end{itemize}
 
 \subsection{Einschränkungen der Formen}
-\begin{itemize}
-    \item \textbf{Bauraum}\\L\,$\times$\,B\,$\times$\,H\@: 145\,mm\,$\times$\,145\,mm\,$\times$\,175\,mm
-    \item \textbf{Große Druckteile}\\Aufgrund der langen Druckdauer und bisher fehlender Erfahrung mit großen Drucken, empfehlen wir Objekte kleiner als 100\,$\times$\,100\,$\times$\,50\,$\mathrm{mm}^3$ (L\,$\times$\,B\,$\times$\,H).
-    \item \textbf{Stützstrukturen}\\Damit Druckteile sinnvoll gedruckt werden können, müssen Stützstrukturen verwendet werden. Die Software erzeugt hierbei ein loses Geflecht an Verbindungen zu Überhängen und Brücken, die sich nach dem Ausdrucken mit einer Zange oder einem Skalpell entfernen lassen.
-    \item \textbf{Ablösewanne}\\Durch die Verwendung von Stützstrukturen wird automatisch eine sogenannte Ablösewanne unter dem Objekt generiert. Diese erleichtert das Ablösen von der Buildplattform. Auf dem Rand der Ablösewanne wird zusätzlich der Dateiname der STL-Datei gedruckt.
+\begin{itemize}%228*128*H245mm
+    \item \textbf{Bauraum}\\L\,$\times$\,B\,$\times$\,H\@: 228\,mm\,$\times$\,128\,mm\,$\times$\,245\,mm
+    \item \textbf{Stützstrukturen}\\Um die Druckteile sinnvoll drucken zu können, müssen Stützstrukturen verwendet werden. Die Software erzeugt dazu ein loses Geflecht von Verbindungen zu Überhängen und Brücken, die nach dem Drucken mit einer Zange oder einem Skalpell entfernt werden können.
+    \item \textbf{Ablösewanne}\\Bei Verwendung von Stützstrukturen kann automatisch eine Ablösewanne unter dem Objekt erzeugt werden. Diese erleichtert das Ablösen von der Bauplattform. Am Rand der Ablösewanne wird zusätzlich der Dateiname der STL-Datei ausgedruckt.
 \end{itemize}
+
+\newpage
 
 \subsection{Designrichtlinien für SLA Drucke}
 
-Die folgenden Designrichtlinien helfen dir dein Druckteil für den \textit{Form2} zu optimieren und beschreiben welche Mindestwerte für den Formlabs-Drucker empfohlen werten. Obwohl das über- bzw. unterschreiten der Werte nicht verboten ist, empfiehlt es sich, dies nur zu tun wenn es ein konkreter Grund erzwingt, und auch dann nur mit Bedacht.
-
-\textbf{Hinweis:} Die folgenden Richtlinien gelten für das Drucken mit dem transparenten Kunstharz bei 100 $\mathrm{\mu}m$. Bei anderen Kunstharzen und anderen Schichtdicken gibt es möglicherweise Abweichungen.
+Die folgenden Konstruktionsrichtlinien helfen bei der Optimierung des Druckteils für den SLA-Druck und beschreiben die empfohlenen Mindestwerte. Obwohl es nicht verboten ist, diese Werte zu über- oder unterschreiten, wird empfohlen, dies nur dann zu tun, wenn ein konkreter Grund dafür vorliegt, und auch dann nur mit Vorsicht. Unter Umständen erfordert ein fehlgeschlagener Druck einen erhöhten Aufwand bei der nächsten Wartung. \\
 
 \begin{itemize}
     \item \textbf{Mindestdicke von gestützten Wänden:}  0,4 mm\\
         \\
-        \textbf{Hinweis:} Gehe beim Nachbearbeiten von dünnen Wänden vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen können. Dies kann zu Verformungen führen, deshalb das Druckteil nur kurz zum waschen eintauchen. \\
+        \textbf{Hinweis:}Bei der Nachbehandlung von dünnen Wänden ist Vorsicht geboten, da diese Isopropanol aufnehmen und aufquellen können. Dies kann zu Verformungen führen, daher das Druckteil zum Waschen nur kurz eintauchen. \\
     \item \textbf{Mindestdicke nicht gestützter Wände:}  0,6 mm
     \item \textbf{Maximale Länge nicht gestützter Überhänge:}  1,0 mm
     \item \textbf{Mindestwinkel für nicht gestützte Überhänge:}  19$^\circ$ von der Ebene
     \item \textbf{Maximale horizontale Stützbrücke:}  21 mm
-    \item \textbf{Mindestdurchmesser von vertikalen Drähten:}  1,5 mm \\
-        \\
-        \textbf{Hinweis:}Gehe beim Nachbearbeiten von vertikalen Drähten vorsichtig vor, da diese das Isopropanol absorbieren und anschwellen und geschwächt werden. Dies kann zu Verformungen oder dem Abbruch des Drahtes führen, deshalb das Modell nur kurz zum waschen eintauchen. \\
+    \item \textbf{Mindestdurchmesser von vertikalen Drähten:}  1,5 mm
     \item \textbf{Mindestwert für geprägte Details:}  0,1 mm
     \item \textbf{Mindestwert für eingravierte Details:}  0,4 mm
     \item \textbf{Mindestabstand zwischen mehreren Druckteilen:}  1 mm
@@ -164,62 +154,22 @@ Die folgenden Designrichtlinien helfen dir dein Druckteil für den \textit{Form2
 
 \end{itemize}
 
-
 \newpage
 
 %%%%%%%%%%%%
 
+\section{3D-Modell mit dem Slicer umwandeln und ausdrucken}
 
-\section{3D-Modell mit PreForm umwandeln und ausdrucken}
-
-\subsection{Preform Vorbereitung}
+\subsection{Vorbereitung}
 
 \begin{itemize}
     \item Vor dem Druckt ist es notwendig, die STL-Datei mit einem eindeutigen Namen zu versehen, zum Beispiel \enquote{Max\_Mustermann\_E-Mail\_Dateiname}.
-    \item Programm \enquote{PreForm} öffnen und Drucker \enquote{PrettyTiger}, auswählen und mit \enquote{Auswählen} bestätigen.
+    \item Programm \enquote{LyceeSlicer} öffnen und als Drucker den \enquote{Uniformation GKTwo}, auswählen.
     \item Mit Klick auf den Dialog \enquote{Datei} und anschließend mit \enquote{Öffnen} STL-Datei öffnen.
-    \item Bei Bedarf das Druckteil mit den Schaltflächen skalieren, drehen und verschieben.
-    \item Notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen.
+    \item Bei Bedarf kann man das Druckteil mit den Schaltflächen skalieren, drehen und verschieben.
+    \item Notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen. Hierzu die entsprechenden Menüpunkte oben mittig auswählen.
+    \item Schichtdicke ist fix eingestellt auf 50\,µm. Änderungen davon geschehen auf Abspreche mit dem Maschinenverantwortlichen. 
 \end{itemize}
-
-\subsection{Wahl der Schichtdicke}
-
-\begin{table} [H]
-    \centering
-    \begin{tabular}{|c||c|c|c|}\hline
-        Harztyp & 100\,$\mu m$ & 50\,$\mu m$ & 25\,$\mu m $\\ \hline\hline
-        Transparent & \checkmark & \checkmark & \checkmark \\ \hline
-        Tough & \checkmark & \checkmark & X \\ \hline
-        Rigid & \checkmark & \checkmark & X \\ \hline
-    \end{tabular}
-    \caption{Unterstützte Schichtdicken für verschiedene Harze}
-    \label{table:supported_layer_thickness_by_resin}
-\end{table}
-
-Die Wahl der Schichtdicke ist entscheidend für die Dauer der Druckzeit des Druckteils. Im Gegensatz zu FDM-3D-Druckern (z.B. Ultimaker) ist die Druckqualität kaum von der Schichtdicke abhängig (außer bei sehr kleinen Objekten). Unsere Empfehlung ist daher die 100\,$\mu m$ Schichtdicke zu verwenden. \\
-Im Vergleich zu 100\,$\mu m$ benötigt ein Druckteil in der Auflösung von 50\,$\mu m$ mindestens doppelt so lange, und ein Druck in der Schichtdicke  25\,$\mu m$ (falls verfügbar) dauert mindestens vier mal so lange.
-
-\subsection{Wahl des Materials}
-
-Im Fablab stehen zwei Materialien zur Auswahl.\\
-\\
-Davon ist eins Transparent, das auch Clear genannt wird, welches das Standardharz für diesen Drucker ist. Es ist Transparent und wird nach dem Polieren fast komplett durchsichtig, es ist ausgezeichnet für interne Kanäle und Arbeiten mit Licht. Es sollte für 15 Minuten bei 60\,$^\circ$C gehärtet werden.\\
-\\
-Das andere ist ein technisches Harz für bessere Stabilität, auch Tough genannt. Es simuliert ABS-Kunststoff und ist geeignet für Anwendungen, die hoher Belastung und Beanspruchung ausgesetzt werden. Optimal für die Fertigung funktionaler Prototypen von Baugruppen, maschinelle Fertigung und Biegeelemente. Es sollte für 60 Minuten bei 60\,$^\circ$C gehärtet werden.\\
-\\ 
-Ein weiteres Material ist Rigid Harz dies ist ein technisches Kunstharz für Steifigkeit und Präzision. Das glasverstärkte Material bietet einen sehr hohen Zugmodul und eine glatte Oberflächenbeschaffenheit. Die Verstärkung durch Glaspulver verleiht Rigid im Vergleich zu den anderen Materialien eine höhere Steifigkeit. Optimal für dünnwandige Objekte und Gehäuse. 
-
-\begin{table} [H]
-	\centering
-	\begin{tabular}{|c||c|c|c|c|}\hline
-		 & ABS-Kunststoff & Tough & Standard-Harz & Rigid\\ \hline\hline
-		Modul & 2,5\,GPa & 2,7\,GPa & 2,8\,GPa & 4.1 GPa\\ \hline
-		Dehnung & 18\,\% & 24\,\% &  6,2\,\% & 5,6\,\% \\ \hline
-		Kerbschlagzähigkeit & 234,9\,J/m & 38\,J/m & 25\,J/m & 18,8\,J/m\\ \hline
-	\end{tabular}
-	\caption{Mechanische Eigenschaften der Harze}
-	\label{table:MechEigenschaften}
-\end{table}
 
 \subsection{Drucken}
 \begin{itemize}
@@ -238,56 +188,36 @@ Ein weiteres Material ist Rigid Harz dies ist ein technisches Kunstharz für Ste
 
 \section{Nachbereitung}
 
-\textbf{Hinweis:} Dieser Teil hat sich gegenüber der alten Einweisung massiv geändert. Bitte eine neue Einweisung dazu geben. 
-
-Nach erfolgreichem Druck kann nun mit der Nachbearbeitung des Druckteils begonnen werden. Für diesen Zweck stehen nun zwei separate Gerätschaften zur Verfügung, nämlich der Form Wash und der Form Cure. Bei dem erstgenannten Gerät, dem Form Wash, handelt es sich um einen Isopropanol Behältnis mit eingebautem Rührfisch zur Reinigung der Druckteile von nicht verfestigten Herzrückständen. Der Form Cure hingegen ist eine optimierte UV-Aushärtekammer mit zusätzlicher Temperaturregelung. 
+Nach erfolgreichem Druck kann nun mit der Nachbearbeitung des Druckteils begonnen werden. Für diesen Zweck stehen nun zwei separate Gerätschaften zur Verfügung, nämlich der Form Wash und der Form Cure. 
+Bei dem erstgenannten Gerät, dem Form Wash, handelt es sich um einen Isopropanol Behältnis mit eingebautem Rührfisch zur Reinigung der Druckteile von nicht verfestigten Herzrückständen. Der Form Cure hingegen ist eine optimierte UV-Aushärtekammer mit zusätzlicher Temperaturregelung. 
 
 Die Nachbearbeitung ab dem fertigstellen des Druckvorgangs ist dabei wie folgt. 
 
 \textbf{Hinweis:} Ab diesen Zeitpunkt muss die vorgeschriebene Schutzausrüstung (Handschuhe) getragen werden.
 
 \begin{enumerate}
-    \item Die ganze Konstruktionsplattform im Form2 lösen.
+    \item Die ganze Konstruktionsplattform im Drucker lösen.
         \begin{itemize}
             \item Ein Hebel befindet sich dazu an der Oberseite der Konstruktionsplattform. Diesen nun lösen und die Quadratische Druckplattform zu sich ziehen und dabei herausnehmen.
 	    \item Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
-            \item Die Orangene Haube des Druckers wieder verschließen, sonst kann es zudem zu Verunreinigungen des Harzes im Tank kommen.
-	    \item Ggf. eine saubere Druckplatform in den Drucker einlegen, dass eine weitere Person drucken könnte.
+            \item Die grüne Haube des Druckers wieder vorsichtig verschließen, sonst kann es zudem zu Verunreinigungen des Harzes im Tank kommen.
         \end{itemize}
-    \item Konstruktionsplattform mit dem gedruckten Teil oben in die Haltevorrichtung des Form Wash einlegen. 
-    	 \begin{itemize}
-    		\item Hierzu befinden sich links und rechts im Form Wash Schienen, in der die Konstruktionsplattform aufliegen kann. 
-    	\end{itemize}
+    \item Die Druckplatte aus dem Drucker nehmen, den Druck von dieser Plattform entfernen und in den Form Wash einlegen.
+    \item Nun die Druckplatte reinigen und nach kurzer Trocknungszeit wieder in den Drucker auf die Haltevorrichtung einsetzen. 
     \item Form Wash nun starten und abwarten.
     \begin{itemize}
-    	\item Die Standartzeit eines Waschdurchgangs beträgt 20 Minuten.
+    	\item Die Standartzeit eines Waschdurchgangs beträgt 5 Minuten.
     	\item Zum Starten im Menü des Wash START mit dem Dreh-Drück-Taster auswählen und mit einem sanften Druck bestätigen.
     \end{itemize}
-    \item Entfernen des Druckteils mit dem Ablösewerkzeug.
-        \begin{itemize}
         	\item Nach Abschluss des Waschdurchgangs fährt die Druckplatform eigenständig aus dem Wash heraus.
         	\item Im besten Falle das Druckerzeugnis noch etwas hängen lassen, damit sich das Isopropanol vom Druck verflüchtigen kann.
-        	\item Ist die Druckplatform vom Wash entnommen, kann im Menü des Wash die Haltevorrichtung wieder eingefahren werden. Hierzu Sleep auswählen und bestätigen. 
-            \item Mit dem Holzablösewerkzeug unter die angewinkelte Kante der Basis ansetzen und anschließend hebeln bis sich der Druck löst.
+        	\item Ist der Druck vom Wash entnommen, kann im Menü des Wash die Haltevorrichtung wieder eingefahren werden. Hierzu Sleep auswählen und bestätigen. .
             \item \textbf{Hinweis:} Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
-            \item \textbf{Hinweis:} Bitte die Konstruktionsplattform erst wieder in den Drucker einsetzen, sobald diese vollständig von Isopropanolresten gereinigt ist. \textbf{Isopropanol zersetzt das Harz, dies soll deshalb nicht in den Bauraum gelangen.}
-        \end{itemize}
     \item Nachhärtung in dem Form Cure
         \begin{itemize}
             \item Hierzu den Druck in den Cure einlegen.
-            \item Das Material nach den gegebenen Parametern aushärten lassen. Hierzu im Menü des Cure die Parameter einstellen und bestätigen.
+            \item Das Material mindestens 15 min aushärten lassen. Hierzu im Menü des Cure die Parameter einstellen und bestätigen.
         \end{itemize}
-    
-   \begin{table} [H]
-   	\centering
-   	\begin{tabular}{|c||c|c|c|c|}\hline
-   		& Tough & Standard-Harz & Castable & Rigid\\ \hline\hline
-   		Zeit [min]& 60 & 15 & 240 & 15\\ \hline
-   		Temperatur [$\circ$C]& 60 & 60 & 60 & 80 \\ \hline
-   	\end{tabular}
-   	\caption{Aushärtezeit des Materials}
-   	\label{table:AusEigenschaften}
-   \end{table}
 
     \item Entfernen der Stützstrukturen
 
@@ -297,10 +227,8 @@ Die Nachbearbeitung ab dem fertigstellen des Druckvorgangs ist dabei wie folgt.
 
 \section{Bezahlen und Abschließen}
 
-Nach der Nachbearbeitung des Druckteils ist die Arbeitsfläche aufzuräumen und dem Nächsten den Platz frei zu machen, und, sofern noch nicht geschehen, das verbrauchte Harzvolumen am Drucker abzulesen und zu notieren. Falls keine weitere Person drucken will ist der \textit{Form2} in Ruhezustand zu versetzen. Dies geschieht durch Drücken und Halten der Drucktaste für 6--10 Sekunden, bis die Anzeige erlischt. \\
-\\
+Nach der Nachbearbeitung des Druckteils ist die Arbeitsfläche aufzuräumen und dem Nächsten den Platz frei zu machen, und, sofern noch nicht geschehen, das verbrauchte Harzvolumen am Drucker abzulesen und zu notieren.\\
 Abgerechnet wird das Druckteil am Kassenterminal, hierzu ist das abgelesene Volumen Harz in $ml$ zu kennen, und am Kassenterminal auf ganze $ml$ aufgerundet zu bezahlen.
-\pagebreak
 
 %%%%%%%%%%%%
 
@@ -313,44 +241,16 @@ Das eingesetzte Verfahren wird als Aräometrie bezeichnet und verwendet eine Tau
 
 Die Tauchspindel des FormWash befindet sich hinten rechts am FormWash hinter einer Klappe. An der Spindel sind auf dem Schwimmer kurze und lange "Flügel" nach oben. Nachdem frisches Isopropanol in den FormWash gegeben wurde, wird der rote Gummiring an der Spindel so eingestellt und positioniert, dass er auf der Höhe der kurzen "Flügel", also an der Oberkante des Körpers des Schwimmers ist. Damit ist der Nullpunkt festgelegt. Mit zunehmender Verschmutzung und damit Dichte schwimmt die Spindel mit dem roten Gummiring bei jeder Messung etwas höher. Sobald er bei einer Messung auf der Höhe der beiden längeren (oberen) Flügel schwimmt, ist das Isopropanol verbraucht und muss baldmöglichst ausgetauscht werden.
 
-Ein Erklärung mit Video findet sich auf den Support-Seiten von FormLabs: \url{https://support.formlabs.com/s/article/Measuring-IPAs-Resin-Concentration?language=de#checking-ipa-resin-concentration} .
-
-Zwischen FormWash und FormCure befindet sich dazu eine Wartungsliste. Die Dichte ist wöchentlich zu messen, und das Ergebnis in die Liste einzutragen. So bald das Isopropanol verbraucht ist wird um Mitteilung an einkauf@fablab.fau.de gebeten.
-
-
-
 \subsection{Wechseln des Harzes}
-Der \textit{Form2} ist in unserem Aufbau dafür zugelassen, dass das Harz gewechselt werden kann. Dies ist jedoch nur von einem eingewiesenen Betreuer durchzuführen. 
+Der SLA-Drucekr ist von uns dafür gedacht, dass das Harz gewechselt werden kann. Dies ist jedoch nur von einem eingewiesenen Betreuer durchzuführen. 
 
-Hierzu muss sichergestellt werden, dass die Druckplattform gereinigt und frei von Kontaminationen ist. Auch soll darauf geachtet werden, dass keine Rückstände von Isopropanol auf der Druckplattform zu finden sind. Als nächstes wird die Kappe von der Harzkartusche geschlossen und die Kartusche am Rückseitigen griff aus dem Drucker hinausgezogen.\\
-Nun muss der schwarze Wischer, auf dem Harztank, durch einen sanften Zug zum Benutzer gelöst werden. Dieser Wischer ist Teil des Harztanks und sollte nicht mit anderen Harzen in Berührung kommen. Anschließend soll der gesamte Harztank gelöst werden, dies indem man links und rechts am Tank greift und, wie zuvor, mit einem Sanften Zug zum Benutzer hin den Tank löst. \\
-Nun holt man den Austauschtank mit einem anderen Harz, dieses befindet sind über dem Platinenbelichter in der Schublade. Während man den Tank entnimmt, ist darauf zu achten, dass dieser nicht gekippt wird und dass man nach dem Öffnen der Pappschachtel die Scheibe an der Unterseite des Tanks nicht berührt. \\
-Nun wechselt man den Tank und die Kartusche für das neue Harz. Der andere Tank kommt wieder in die Pappschachtel und zurück in die Schublade. Die angebrochene Kartusche legt man auf die Längsseite mit dem Deck nach oben gerichtet, um ein auslaufen zu vermeiden, hinter den Drucker selbst. \\
-\\
-Detaillierte Schritte können dem Supportdokument (ab Kapitel 4) entnommen werden. 
-\url{https://support.formlabs.com/s/article/Quick-Start-Guide?language=de}
+Hierzu muss sichergestellt werden, dass die Druckplattform gereinigt und frei von Kontaminationen ist. Auch soll darauf geachtet werden, dass keine Rückstände von Isopropanol auf der Druckplattform zu finden sind.\\
+Anschließend kann der gesamte Harztank gelöst werden, dies indem man links und rechts am Tank greift und, wie zuvor, mit einem Sanften Zug zum Benutzer hin den Tank löst. \\
 
+\subsection{nFEP Folie}
+Zur Reinigung des der nFEP Folie unter dem Harztanks bei Verschmutzung durch Schlieren oder Fingerabdrücken.
 
-\subsection{Ausrichten des Druckers}
-Der \textit{Form2} muss, um fehlerfrei drucken zu können, nivelliert sein. Hierzu gibt es ein Eintrag im Einstellungsmenü des Druckers.\\
-Ist der Drucker nicht nivelliert, so ist dieser Menüeintrag auszuwählen und den Anweisungen auf dem Bildschirm zu folgen. Zum justieren wird das runde Nivellierwerkzeug benötigt. Dieses schiebt man unter die jeweilige Ecke und dreht es im Uhrzeigersinn um den Drucker tiefer, und gegen den Uhrzeigersinn um ihn höher zu stellen.\\
-Weitere Informationen dazu auf der Supportseite des Herstellers.	\\
-\url{https://support.formlabs.com/s/article/Level-the-Form-2?language=de}
-
-\subsection{Pflege der Harzkartusche}
-Die Harzkartusche muss ungefähr alle zwei Wochen geschüttelt werden, damit das Kunstharz stets gut durchmischt ist. Dadurch erhöht sich die Druckqualität.
-
-\subsection{Harztank}
-Der Harztank (Resin Tabk LT) sollte regelmäßig von gereinigt werden. Anleitung dazu auf der Supportseite des Herstellers\\
-\url{https://support.formlabs.com/s/article/Resin-Tank-LT-Maintenance-and-Care?language=de}
-
-\subsection{Glasfenster}
-Zur Reinigung des Glasfensters unter dem Harztanks bei Verschmutzung durch Schlieren oder Fingerabdrücken siehe:\\ \url{https://support.formlabs.com/s/article/Cleaning-the-Glass-Optical-Window-Form2?language=de}
-
-\subsection{Firmwareupdates}
-
-In regelmäßigen Abständen kommt es vor, dass die Firmware des Druckers zu updaten ist. Eine Anleitung findet sich hierbei auf der Website des Herstellers.\\
-\url{https://support.formlabs.com/s/article/Updating-Form-2-Firmware?language=de}
+%%%%%%%%%%%%
 
 \ccLicense{FormLabs\_Form2\_Einweisung}{Einweisung FormLabs Form2}
 
