@@ -11,7 +11,7 @@ auschecken
 ----------
 
 ```bash
-git clone --recursive git@github.com:fau-fablab/SLA_Drucker_Einweisung.git
+git clone --recursive git@github.com:fau-fablab/sla-drucker-einweisung.git
 ```
 
 Technische Details zum Buildserver siehe auf macgyver /home/buildserver/README
