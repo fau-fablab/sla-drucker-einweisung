@@ -21,6 +21,10 @@
 \newcommand{\ra}{$\Rightarrow$}
 
 \date{\today}
+% Versionsnummer: version.tex wird von der GitHub Action erzeugt,
+% lokal steht stattdessen "Entwurf" mit Datum in der Fußzeile.
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+\fancyfoot[R]{Version \Version}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung SLA 3D-Drucker}
 
@@ -29,7 +33,8 @@
 \maketitle
 \begin{center}
 	Für den Resin-3D-Drucker \textbf{UniFormation GKtwo}\\
-	mit \textbf{Lychee Slicer} und \textbf{Phrozen Water-Washable Rapid Black}
+	mit \textbf{Lychee Slicer} und \textbf{Phrozen Water-Washable Rapid Black}\\[1mm]
+	{\small Version \Version}
 \end{center}
 
 \textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen.}
