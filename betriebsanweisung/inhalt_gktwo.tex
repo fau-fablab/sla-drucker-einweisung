@@ -1,0 +1,87 @@
+% =====================================================================
+%  Betriebsanweisung (Arbeitsmittel) UniFormation GKtwo
+%  (wird von SLA_Drucker_Einweisung.tex eingebunden)
+% =====================================================================
+
+\BAgeraetefarbe
+\renewcommand{\BAgrundlage}{gemäß § 12 BetrSichV und § 4 DGUV Vorschrift 1}
+\renewcommand{\BAgeraetlabel}{Arbeitsmittel:}
+\renewcommand{\BAgeraet}{Resin-3D-Drucker UniFormation GKtwo (MSLA, LCD-Belichtung 405\,nm, beheizter Harztank)}
+\renewcommand{\BAnummer}{BA-SLA-01}
+% Gerätebild: schematischer Resin-Drucker mit grüner UV-Schutzhaube
+\renewcommand{\BAgeraetbilder}{%
+  \begin{tikzpicture}[x=1mm, y=1mm, line width=0.5pt]
+    \fill[black!70, rounded corners=0.8mm] (0,0) rectangle (16,5);
+    \fill[green!55!black, opacity=0.8, rounded corners=0.8mm] (0.8,5) rectangle (15.2,20);
+    \fill[black!45] (7.3,6) rectangle (8.7,18.5);
+    \fill[black!60] (3.5,12) rectangle (12.5,13.5);
+    \fill[white, opacity=0.6] (2.5,2.2) rectangle (6.5,3.8);
+  \end{tikzpicture}}
+
+\BAkopf{Drucken, Harz einfüllen, Teileentnahme, Reinigung}
+
+% ---------- 1 Anwendungsbereich --------------------------------------
+\BAblock{ANWENDUNGSBEREICH}{M002}{%
+  \begin{itemize}
+    \item Additive Fertigung von Kunststoffteilen aus flüssigem Photopolymer-Harz.
+    \item Material: \textbf{nur Phrozen Water-Washable Rapid Black}, zusätzlich
+          gilt die \textbf{Gefahrstoff-Betriebsanweisung}.
+    \item Benutzung nur nach Einweisung; Hinweise des Herstellers beachten.
+  \end{itemize}}
+
+% ---------- 2 Gefahren -----------------------------------------------
+\BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{W027,W024,W012}{%
+  \begin{itemize}
+    \item \textbf{Flüssiges Harz} an Tank, Plattform und frischen Teilen:
+          reizt Haut und Augen, kann Allergien auslösen.
+    \item \textbf{UV-Strahlung} (405\,nm) bei geöffneter Haube.
+    \item \textbf{Quetschgefahr} zwischen Plattform und Tank.
+    \item \textbf{Schnittgefahr} beim Ablösen mit dem Spachtel.
+    \item \textbf{Elektrische Gefährdung} (230\,V), besonders wenn
+          Harz oder Wasser in das Gerät gelangt.
+  \end{itemize}}
+
+% ---------- 3 Schutzmaßnahmen ----------------------------------------
+\BAblock{SCHUTZMASSNAHMEN UND VERHALTENSREGELN}{M004,M009,P015}{%
+  \begin{itemize}
+    \item Beim Arbeiten mit Harz \textbf{Schutzbrille} und
+          \textbf{Nitrilhandschuhe} tragen.
+    \item UV-Schutzhaube während des Drucks geschlossen halten.
+    \item Nicht in den Tank greifen, solange sich die Plattform bewegt.
+    \item Keine spitzen Gegenstände in den Tank (nFEP-Folie, LCD).
+    \item Spachtel immer vom Körper weg führen.
+    \item Essen und Trinken am Drucker verboten.
+  \end{itemize}}
+
+% ---------- 4 Störungen ----------------------------------------------
+\BAblock{VERHALTEN BEI STÖRUNGEN}{W001,F001}{%
+  \begin{itemize}
+    \item Druck am Display des Druckers stoppen.
+    \item Bei Rauch, Brandgeruch oder Funkenbildung sofort Drucker
+          ausschalten oder \textbf{Netzstecker ziehen}.
+    \item Fehldruck im Tank, beschädigte Folie oder ausgelaufenes Harz:
+          nicht selbst beheben, Betreuer informieren.
+    \item Entstehungsbrand: Gerät stromlos machen, mit CO\textsubscript{2}-Löscher
+          löschen. \textbf{Feuerwehr: 112}
+  \end{itemize}}
+
+% ---------- 5 Erste Hilfe --------------------------------------------
+\BAblock{VERHALTEN BEI UNFÄLLEN – ERSTE HILFE}{E003,E011}{%
+  \begin{itemize}
+    \item Ruhe bewahren, Gerät abschalten, Betreuer/Ersthelfer verständigen.
+    \item Harz im Auge: sofort mindestens 10 Min.\ mit Wasser spülen,
+          Augenarzt aufsuchen.
+    \item Harz auf der Haut: sofort mit Wasser und Seife abwaschen.
+    \item Jeden Unfall den Betreuern melden und im Verbandbuch eintragen.
+  \end{itemize}\vspace{1.5mm}
+  \textbf{Notruf: 112}\qquad FabLab: 09131\,/\,85\,28013}
+
+% ---------- 6 Instandhaltung / Entsorgung (mit Fußzeile) --------------
+\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M006}{%
+  \begin{itemize}
+    \item Wartung nur durch Betreuer; Folie und Filter nur im
+          ausgeschalteten Zustand tauschen.
+    \item Elektrische Prüfung nach DGUV Vorschrift 3.
+    \item Harz und Waschwasser \textbf{nicht in den Abfluss}
+          (siehe Gefahrstoff-Betriebsanweisung).
+  \end{itemize}}

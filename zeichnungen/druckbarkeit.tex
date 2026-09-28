@@ -1,0 +1,119 @@
+% =====================================================================
+%  Druckbarkeit bei Resin (MSLA): Ausrichtung, Saugnapf-Effekt,
+%  Hohlkörper mit Ablauflöchern, Stützen und Inseln.
+%  Gedruckt wird kopfüber: Druckplattform oben, Tank mit Folie unten.
+%  Werte nach Protolabs Network (Hubs), SLA-Designrichtlinien.
+% =====================================================================
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize,
+    teil/.style={fill=black!18, draw=black!75, line width=0.7pt, line join=round},
+    stuetzlinie/.style={stuetze, line width=0.8pt, line cap=round},
+    ok/.pic={\fill[okgruen] (0,0) circle (3);
+      \draw[white, line width=1.3pt, line cap=round, line join=round]
+        (-1.4,0.1) -- (-0.4,-1.1) -- (1.5,1.2);},
+    nok/.pic={\fill[nokrot] (0,0) circle (3);
+      \draw[white, line width=1.3pt, line cap=round]
+        (-1.1,-1.1) -- (1.1,1.1) (-1.1,1.1) -- (1.1,-1.1);},
+  ]
+  \definecolor{okgruen}{RGB}{46,160,67}
+  \definecolor{nokrot}{RGB}{207,34,46}
+  \definecolor{stuetze}{RGB}{47,111,183}
+  \definecolor{feld}{RGB}{244,246,248}
+  \definecolor{bett}{RGB}{60,64,70}
+  \definecolor{harz}{RGB}{214,222,232}
+
+  % Feldrahmen, Titel, Druckplattform (oben) und Tank mit Folie (unten):
+  % \feld{x}{y}{Titel}
+  \newcommand{\feld}[3]{%
+    \fill[feld, rounded corners=2mm] (#1,#2) rectangle ++(82,50);
+    \node[anchor=north west, font=\small\bfseries] at (#1+3,#2+48) {#3};
+    \fill[bett] (#1+5,#2+38) rectangle ++(72,2);
+    \fill[harz] (#1+5,#2+7) rectangle ++(72,4);
+    \draw[stuetze, line width=0.8pt] (#1+5,#2+7) -- ++(72,0);}
+  % Raft unter der Druckplattform: \raft{x-links}{x-rechts}
+  \newcommand{\raft}[2]{\fill[black!45] (#1,36.5) rectangle (#2,38);}
+
+  % ---------------- 1 Ausrichtung -----------------------------------
+  \feld{0}{55}{1\quad Ausrichtung}
+  \begin{scope}[shift={(0,55)}]
+    % flach: jede Schicht ist die ganze Fläche
+    \raft{8}{36}
+    \foreach \x in {12,18,24,30} \draw[stuetzlinie] (\x,36.5) -- (\x,26);
+    \draw[teil] (9,22) rectangle (35,26);
+    \pic at (22,16.5) {nok};
+    % schräg: kleine Schichten, geringe Abzugskräfte
+    \raft{46}{70}
+    \draw[stuetzlinie] (50.5,36.5) -- (50.5,20.5) (55.4,36.5) -- (55.4,23.9)
+      (60.3,36.5) -- (60.3,27.4) (65.2,36.5) -- (65.2,30.8);
+    \begin{scope}[shift={(59,24)}, rotate=35]
+      \draw[teil] (-13,-2) rectangle (13,2);
+    \end{scope}
+    \pic at (72,17) {ok};
+    \node at (22,3) {parallel zur Plattform};
+    \node at (60,3) {schräg, etwa 30--45°};
+  \end{scope}
+
+  % ---------------- 2 Saugnapf-Effekt -------------------------------
+  \feld{88}{55}{2\quad Saugnapf-Effekt}
+  \begin{scope}[shift={(88,55)}]
+    % Öffnung zur Folie: Unterdruck beim Abziehen
+    \raft{8}{36}
+    \foreach \x in {12,22,32} \draw[stuetzlinie] (\x,36.5) -- (\x,30);
+    \draw[teil] (10,16) -- (10,30) -- (34,30) -- (34,16) -- (31,16) -- (31,27)
+      -- (13,27) -- (13,16) -- cycle;
+    \fill[harz] (13,16) rectangle (31,27);
+    \draw[nokrot, line width=0.8pt, ->] (22,14.5) -- (22,20);
+    \node[nokrot] at (22,23.5) {Unterdruck};
+    \pic at (38,19) {nok};
+    % Öffnung zur Plattform: Harz fließt ab
+    \raft{44}{72}
+    \foreach \x in {47.5,68.5} \draw[stuetzlinie] (\x,36.5) -- (\x,30);
+    \draw[teil] (46,30) -- (46,16) -- (70,16) -- (70,30) -- (67,30) -- (67,19)
+      -- (49,19) -- (49,30) -- cycle;
+    \pic at (74,23) {ok};
+    \node at (22,3) {Öffnung zur Folie};
+    \node at (58,3) {Öffnung zur Plattform};
+  \end{scope}
+
+  % ---------------- 3 Hohlkörper ------------------------------------
+  \feld{0}{0}{3\quad Hohlkörper}
+  \begin{scope}
+    % geschlossen: Harz bleibt innen eingeschlossen
+    \raft{8}{36}
+    \foreach \x in {12,22,32} \draw[stuetzlinie] (\x,36.5) -- (\x,31);
+    \draw[teil] (9,15) rectangle (35,31);
+    \fill[harz, draw=black!75, line width=0.7pt] (12,18) rectangle (32,28);
+    \node[align=center] at (22,23) {Harz\\bleibt drin};
+    \pic at (38,13) {nok};
+    % ausgehöhlt mit Ablauflöchern nahe der Plattform
+    \raft{44}{72}
+    \foreach \x in {46.5,58,69.5} \draw[stuetzlinie] (\x,36.5) -- (\x,31);
+    \draw[teil] (45,15) rectangle (71,31);
+    \fill[feld, draw=black!75, line width=0.7pt] (48,18) rectangle (68,28);
+    \fill[feld] (50.5,27.6) rectangle (54.5,31.4);
+    \fill[feld] (61.5,27.6) rectangle (65.5,31.4);
+    \draw[black!75] (50.5,26.2) -- (50.5,27.4) (54.5,26.2) -- (54.5,27.4);
+    \draw[<->, black!75] (50.5,26.8) -- (54.5,26.8);
+    \node[anchor=north west] at (49.5,25.8) {$\ge$ 3,5\,mm};
+    \pic at (74,13) {ok};
+    \node at (22,3) {geschlossen};
+    \node at (58,3) {Löcher, Wand $\ge$ 2\,mm};
+  \end{scope}
+
+  % ---------------- 4 Stützen und Inseln ----------------------------
+  \feld{88}{0}{4\quad Stützen und Inseln}
+  \begin{scope}[shift={(88,0)}]
+    % Spitzen zur Plattform entstehen zuerst und brauchen eine Stütze
+    \raft{16}{28}
+    \draw[stuetzlinie] (22,36.5) -- (22,19);
+    \draw[teil] (10,30) -- (13,30) -- (22,19) -- (31,30) -- (34,30) -- (22,15) -- cycle;
+    \draw[nokrot, line width=0.8pt] (11.5,30.5) circle (2.4) (32.5,30.5) circle (2.4);
+    \pic at (38,17) {nok};
+    \raft{44}{72}
+    \draw[stuetzlinie] (58,36.5) -- (58,19) (47.5,36.5) -- (47.5,30)
+      (68.5,36.5) -- (68.5,30);
+    \draw[teil] (46,30) -- (49,30) -- (58,19) -- (67,30) -- (70,30) -- (58,15) -- cycle;
+    \pic at (74,17) {ok};
+    \node at (22,3) {Spitzen ohne Stütze};
+    \node at (58,3) {jede Spitze gestützt};
+  \end{scope}
+\end{tikzpicture}

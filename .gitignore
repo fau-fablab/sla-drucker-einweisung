@@ -2,7 +2,11 @@
 /*.pdf
 output/
 revision.tex
+version.tex
 *~
+
+# macOS
+.DS_Store
 
 # was auch immer das ist:
 *.stc*

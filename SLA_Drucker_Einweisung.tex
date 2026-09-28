@@ -2,30 +2,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COPYRIGHT: (C) 2012-2015 FAU FabLab and others
 % Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
-% Sobald alle Mitautoren zugestimmt haben, steht die komplette Datei unter CC-BY-SA 3.0. Bis dahin ist der Lizenzstatus aller alten Bestandteile ungeklärt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \newcommand{\basedir}{fablab-document}
 \documentclass{\basedir/fablab-document}
-\usepackage{amssymb} % Symbole für Knöpfe
-\usepackage{subfigure,caption}
-\usepackage{eurosym}
+
+\usepackage{caption}
 \usepackage{textcomp} % \textcelsius
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{float} % Ermöglicht H als Platzierungsoption
-\usepackage{array}
-\usepackage[hyphens]{url}
+\usepackage{qrcode}
+\usepackage{betriebsanweisung/ba-layout}
 
-\renewcommand{\texteuro}{\euro}
-\newcommand{\fachbegriff}[1]{(\textit{#1})}
-\newcommand{\ts}[1]{\textsuperscript{#1}}
+% Stammdaten der Betriebsanweisungen
+% (Inhalt: betriebsanweisung/inhalt_gktwo.tex und betriebsanweisung/inhalt_resin.tex)
+\input{betriebsanweisung/stammdaten}
+
 \newcommand{\ra}{$\Rightarrow$}
 
-% \linespread{1.2}
-% \fancyhead{}
 \date{\today}
+% Versionsnummer: version.tex wird von der GitHub Action erzeugt,
+% lokal steht stattdessen "Entwurf" mit Datum in der Fußzeile.
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+\fancyfoot[R]{Version \Version}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung SLA 3D-Drucker}
 
@@ -33,224 +32,362 @@
 
 \maketitle
 \begin{center}
-    Für LCD basierte SLA 3D-Drucker
+	Für den Resin-3D-Drucker \textbf{UniFormation GKtwo}\\
+	mit \textbf{Lychee Slicer} und \textbf{Phrozen Water-Washable Rapid Black}\\[1mm]
+	{\small Version \Version}
 \end{center}
 
-\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbständig bedienen}, um Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, wende dich an einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht das gewünschte Teil drucken. Wenn du alles verstanden hast, kannst auch du die Einweisung unterschreiben und den Drucker in Zukunft selbstständig benutzen.
+\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen.}
+Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Nach der Einweisung und Unterschrift darfst du den Drucker selbstständig verwenden.
+
+\section{Regeln und Sicherheit}
+
+\begin{itemize}
+	\item Den Druck ab und zu durch die grüne Haube kontrollieren.
+	\item Drucke dürfen auch \textbf{über Nacht} laufen. Wenn du vor Druckende gehst, klebe einen \textbf{Post-it mit Name und E-Mail-Adresse} an den Drucker.
+	\item Die grüne \textbf{UV-Schutzhaube} bleibt während des Drucks geschlossen.
+	\item Nicht in den Tank greifen, solange sich die Plattform bewegt. Keine spitzen Gegenstände in den Tank, die \textbf{nFEP-Folie} und das LCD darunter sind empfindlich.
+	\item Nur \textbf{Phrozen Water-Washable Rapid Black}. Harz nachfüllen nur nach Absprache, Wartung nur durch Betreuer.
+	\item \textbf{Bezahlen nicht vergessen.}
+\end{itemize}
+
+\subsection{Gefahren und Schutzausrüstung}
+
+\begin{center}
+	\includegraphics[height=11mm]{GHS05}\quad
+	\includegraphics[height=11mm]{GHS07}\quad
+	\includegraphics[height=11mm]{GHS08}\quad
+	\includegraphics[height=11mm]{GHS09}\qquad\qquad
+	\includegraphics[height=11mm]{M004}\quad
+	\includegraphics[height=11mm]{M009}
+\end{center}
+
+\begin{itemize}
+	\item Flüssiges Harz verursacht \textbf{schwere Augenschäden}, reizt die Haut und \textbf{kann Allergien auslösen}, die dauerhaft bleiben.
+	\item Das Harz \textbf{kann die Fruchtbarkeit beeinträchtigen und das Kind im Mutterleib schädigen}. \textbf{Schwangere und Stillende dürfen nicht mit dem Harz arbeiten.}
+	\item Immer \textbf{Schutzbrille} und \textbf{Nitrilhandschuhe} tragen, bis die Teile gewaschen und nachgehärtet sind.
+	\item Auch das \textbf{Waschwasser} im Form Wash enthält Harz, das sehr giftig für Wasserorganismen ist. Es darf \textbf{nie in den Abfluss}.
+	\item Drucke sind \textbf{nicht lebensmittelecht} oder biokompatibel.
+\end{itemize}
+
+Zusätzlich gelten die \textbf{Betriebsanweisungen} für den Drucker (Abschnitt~\ref{sec:ba-gktwo}) und für das Harz (Abschnitt~\ref{sec:ba-resin}). Sie hängen am Drucker aus.
+
+\newpage
+
+% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
+\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
+\thispagestyle{empty}
+\refstepcounter{section}\label{sec:ba-gktwo}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung UniFormation GKtwo}
+{\small\input{betriebsanweisung/inhalt_gktwo}}
+\restoregeometry
+\newpage
+
+% Gefahrstoff-Betriebsanweisung für das Harz
+\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
+\thispagestyle{empty}
+\refstepcounter{section}\label{sec:ba-resin}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung Gefahrstoff: Phrozen Water-Washable Rapid Black}
+{\small\input{betriebsanweisung/inhalt_resin}}
+\restoregeometry
+\newpage
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
 \setcounter{tocdepth}{2}
 \tableofcontents
 \newpage
 
-\section{Regeln und Hinweise}
-% Hier sollte nur das wichtigste gegen "Kaputtmachen" des Druckers stehen.
-Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
-
-\begin{itemize}
-    \item Obwohl der 3D-Druck unter den Begriff \enquote{Rapid Prototyping} fällt, kann ein gedrucktes Teil je nach Abmessungen durchaus mehrere Stunden in Anspruch nehmen. Betreuer und Software helfen dabei, die Dauer abzuschätzen.
-    \item Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit deinem Namen und deinen Kontaktdaten.
-    \item Anleitung ist exakt zu beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
-    \item Ein Materialwechsel und die Wartung darf \textbf{nur von einem Betreuer} durchgeführt werden.
-    \item \textbf{Bezahlen bitte nicht vergessen!}
-\end{itemize}
-%\newpage
-\subsection{Gefahren für Mensch und Maschine}
-\begin{table}[h]
-    \centering
-    \begin{tabular}{ccc}
-
-        \includegraphics[width=2cm]{bilder/GHSa.png}  & \includegraphics[width=2cm]{bilder/GHSf.png}
-    \end{tabular}
-\end{table}
-
-\begin{itemize}
-    \item Das eingesetzte Kunstharz und Isopropylalkohol sind gesundheitsschädlich. Haut- und Augenkontakt sowie Verschlucken und Einatmen der Dämpfe vermeiden.
-    \item Zu Ihrer eigenen Sicherheit sollten sowohl beim Umgang mit dem flüssigen Kunstharz als auch beim Umgang mit Isopropylalkohol zur Nachbehandlung des Druckteils Nitrilhandschuhe getragen werden.
-    \item Isopropylalkohol ist leicht entzündlich, daher ist der Umgang mit offenem Feuer und Zündquellen in der Nähe verboten.
-    \item Drucke sind \textbf{nicht lebensmittelecht} oder biokompatibel, da sie auch nach der Weiterverarbeitung noch Spuren des Ausgangsmaterials enthalten können. 
-\end{itemize}
-
-%%%%%%%%%%%
-
-\subsection{Persönliche Schutzausrüstung}
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{cc}
-
-        \includegraphics[width=2cm]{bilder/gaugenschutz.png}  & \includegraphics[width=2cm]{bilder/ghandschuh.png} \\
-    \end{tabular}
-\end{table}
-
-Bei allen Arbeiten am Drucker und bei der Nachbearbeitung der Teile sind zu tragen:
-\begin{itemize}
-    \item \textbf{Schutzbrille}
-    \item \textbf{Einweghandschuhe}
-\end{itemize}
-Erst nach dem Waschen und Nachbelichten dürfen die Teile ohne Handschuhe angefasst werden. Vorher können sich noch Reste von unpolymerisiertem Kunststoff auf der Oberfläche befinden.
-\newpage
-
-% % % % % % %
-
-% % % % % % % % % % % % % % % %
-\section{3D-Modell erstellen}
+\section{3D-Modell vorbereiten}
 
 \subsection{Dateiformat}
 
-Im STL-Dateiformat, Einheit: Millimeter. Alle gängigen 3D-Programme haben einen STL-Export.
+Das Modell sollte als \textbf{STL}, \textbf{OBJ} oder \textbf{3MF} vorliegen. Die Einheit ist Millimeter.
 
+Geeignete Programme sind zum Beispiel:
 \begin{itemize}
-    \item auf \href{https://thingiverse.com}{Thingiverse.com} oder  \href{https://printables.com}{Printables.com}  gibt es viele vorgefertigte Modelle, als
-        Grundlage oder gleich zum Bereit zum ausdrucken.
-    \item oder erstelle ein Modell mit einem Programm deiner Wahl
-        \begin{table}[H]
-            \centering
-            \begin{tabularx}{\textwidth}{|l|X|}
-                \hline \textbf{Name} & \textbf{Beschreibung} \\
-                \hline \multicolumn{2}{|c|}{\textit{kostenlose Software}}  \\
-                \hline Blender & relativ komplex aber auch für Freiformflächen geeignet  \\
-                \hline OpenSCAD & Skriptsprache für Konstruktion aus geometrischen Grundkörpern \\
-                \hline DesignSpark Mechanical & Angelehnt an professionelle CAD-Software, aber relativ einfach zu bedienen  \\
-                \hline TinkerCAD & sehr einfach, für Kinder gut geeignet  \\
-                \hline Google SketchUp & wenig Einarbeitung, geringer Funktionsumfang, für einfache Teile \\
-                \hline & \\
-                \hline \multicolumn{2}{|c|}{\textit{kostenpflichtige Software (proprietär)}}  \\
-                \hline PTC Creo, Solid Edge, Siemens NX & kostenlos beim RRZE für Studenten, professionelle Software \\
-                \hline Autocad Inventor, Fusion 360 & kostenlos bei Autodesk für Studenten ebenfalls für professionelle Anwendungen \\
-                \hline
-            \end{tabularx}
-        \end{table}
+	\item TinkerCAD für einfache Modelle,
+	\item OpenSCAD für skriptbasierte Konstruktionen,
+	\item FreeCAD für technische Bauteile,
+	\item Blender für Freiformmodelle und Figuren,
+	\item professionelle CAD-Programme wie Solid Edge, Inventor oder Fusion 360.
 \end{itemize}
 
-\subsection{Einschränkungen der Formen}
-\begin{itemize}%228*128*H245mm
-    \item \textbf{Bauraum}\\L\,$\times$\,B\,$\times$\,H\@: 228\,mm\,$\times$\,128\,mm\,$\times$\,245\,mm
-    \item \textbf{Stützstrukturen}\\Um die Druckteile sinnvoll drucken zu können, müssen Stützstrukturen verwendet werden. Die Software erzeugt dazu ein loses Geflecht von Verbindungen zu Überhängen und Brücken, die nach dem Drucken mit einer Zange oder einem Skalpell entfernt werden können.
-    \item \textbf{Ablösewanne}\\Bei Verwendung von Stützstrukturen kann automatisch eine Ablösewanne unter dem Objekt erzeugt werden. Diese erleichtert das Ablösen von der Bauplattform. Am Rand der Ablösewanne wird zusätzlich der Dateiname der STL-Datei ausgedruckt.
-\end{itemize}
+Vorgefertigte Modelle gibt es zum Beispiel auf \href{https://www.printables.com}{Printables.com}, \href{https://makerworld.com}{MakerWorld.com} oder \href{https://www.thingiverse.com}{Thingiverse.com}. Viele Figuren dort sind bereits für Resin-Drucker vorbereitet (\enquote{pre-supported}).
 
-\newpage
+\subsection{Bauraum}
 
-\subsection{Designrichtlinien für SLA Drucke}
+UniFormation GKtwo: 228\,mm $\times$ 128\,mm $\times$ 245\,mm (L\,$\times$\,B\,$\times$\,H)
 
-Die folgenden Konstruktionsrichtlinien helfen bei der Optimierung des Druckteils für den SLA-Druck und beschreiben die empfohlenen Mindestwerte. Obwohl es nicht verboten ist, diese Werte zu über- oder unterschreiten, wird empfohlen, dies nur dann zu tun, wenn ein konkreter Grund dafür vorliegt, und auch dann nur mit Vorsicht. Unter Umständen erfordert ein fehlgeschlagener Druck einen erhöhten Aufwand bei der nächsten Wartung. \\
+Die Druckzeit hängt fast nur von der Höhe ab: Jede Schicht wird in einem Schritt belichtet, egal wie viele Teile auf der Plattform stehen. Mehrere Teile gleichzeitig zu drucken kostet also kaum zusätzliche Zeit.
 
-\begin{itemize}
-    \item \textbf{Mindestdicke von gestützten Wänden:}  0,4 mm\\
-        \\
-        \textbf{Hinweis:}Bei der Nachbehandlung von dünnen Wänden ist Vorsicht geboten, da diese Isopropanol aufnehmen und aufquellen können. Dies kann zu Verformungen führen, daher das Druckteil zum Waschen nur kurz eintauchen. \\
-    \item \textbf{Mindestdicke nicht gestützter Wände:}  0,6 mm
-    \item \textbf{Maximale Länge nicht gestützter Überhänge:}  1,0 mm
-    \item \textbf{Mindestwinkel für nicht gestützte Überhänge:}  19$^\circ$ von der Ebene
-    \item \textbf{Maximale horizontale Stützbrücke:}  21 mm
-    \item \textbf{Mindestdurchmesser von vertikalen Drähten:}  1,5 mm
-    \item \textbf{Mindestwert für geprägte Details:}  0,1 mm
-    \item \textbf{Mindestwert für eingravierte Details:}  0,4 mm
-    \item \textbf{Mindestabstand zwischen mehreren Druckteilen:}  1 mm
-    \item \textbf{Mindestdurchmesser für Aussparungen:}  0,5 mm
-    \item \textbf{Hohlkörper} \\
-        Abflussmöglichkeiten für das verbleibende Kunstharz vorsehen, da dieses im Inneren verbleibt. Aufgrund der Viskosität des Harzes sollten diese Öffnungen einen Durchmesser von mindestens 3,5\,mm aufweisen.
+\subsection{Druckbarkeit}\label{sec:druckbarkeit}
 
-\end{itemize}
-
-\newpage
-
-%%%%%%%%%%%%
-
-\section{3D-Modell mit dem Slicer umwandeln und ausdrucken}
-
-\subsection{Vorbereitung}
-
-\begin{itemize}
-    \item Vor dem Druckt ist es notwendig, die STL-Datei mit einem eindeutigen Namen zu versehen, zum Beispiel \enquote{Max\_Mustermann\_E-Mail\_Dateiname}.
-    \item Programm \enquote{LyceeSlicer} öffnen und als Drucker den \enquote{Uniformation GKTwo}, auswählen.
-    \item Mit Klick auf den Dialog \enquote{Datei} und anschließend mit \enquote{Öffnen} STL-Datei öffnen.
-    \item Bei Bedarf kann man das Druckteil mit den Schaltflächen skalieren, drehen und verschieben.
-    \item Notwendige Stützstrukturen automatisch erstellen lassen, bei Bedarf händisch anpassen. Hierzu die entsprechenden Menüpunkte oben mittig auswählen.
-    \item Schichtdicke ist fix eingestellt auf 50\,µm. Änderungen davon geschehen auf Abspreche mit dem Maschinenverantwortlichen. 
-\end{itemize}
-
-\subsection{Drucken}
-\begin{itemize}
-
-    \item Zum Drucken des Objektes die orange Schaltfläche \enquote{Druckeinrichtung} öffnen.\\
-    \item \textbf{Hinweis:} Notiere dir bitte die nun angezeigte kalkulierte Menge an Harz, die für dein Druckteil benötigt wird. Diese ist notwendig, um deinen Druck bezahlen zu können.
-    \item In diesem Dialog ist vor dem Senden der Name des Druckteils zu deklarieren. Hier bitte mindesens Name und E-Mail-Adresse angeben, am besten auch noch die Telefonnummer.\\
-    \item Nach erfolgreichem Senden befindet sich das Druckteil nun auf dem Drucker selbst. Hierzu einfach den Anweisungen auf dem Bildschirm des \textit{Form2} folgen bis der Druck gestartet ist.
-    \item Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit deinem Namen und deinen Kontaktdaten.
-
-\end{itemize}
-
-\pagebreak
-
-%%%%%%%%%%%%%%%%%%
-
-\section{Nachbereitung}
-
-Nach erfolgreichem Druck kann nun mit der Nachbearbeitung des Druckteils begonnen werden. Für diesen Zweck stehen nun zwei separate Gerätschaften zur Verfügung, nämlich der Form Wash und der Form Cure. 
-Bei dem erstgenannten Gerät, dem Form Wash, handelt es sich um einen Isopropanol Behältnis mit eingebautem Rührfisch zur Reinigung der Druckteile von nicht verfestigten Herzrückständen. Der Form Cure hingegen ist eine optimierte UV-Aushärtekammer mit zusätzlicher Temperaturregelung. 
-
-Die Nachbearbeitung ab dem fertigstellen des Druckvorgangs ist dabei wie folgt. 
-
-\textbf{Hinweis:} Ab diesen Zeitpunkt muss die vorgeschriebene Schutzausrüstung (Handschuhe) getragen werden.
+Resin-Drucker drucken \textbf{kopfüber}: Die Druckplattform taucht von oben in den Tank, jede Schicht wird durch die Folie am Tankboden belichtet und danach von der Folie abgezogen. Daraus ergeben sich die wichtigsten Regeln (Nummern wie in der Abbildung):
 
 \begin{enumerate}
-    \item Die ganze Konstruktionsplattform im Drucker lösen.
-        \begin{itemize}
-            \item Ein Hebel befindet sich dazu an der Oberseite der Konstruktionsplattform. Diesen nun lösen und die Quadratische Druckplattform zu sich ziehen und dabei herausnehmen.
-	    \item Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
-            \item Die grüne Haube des Druckers wieder vorsichtig verschließen, sonst kann es zudem zu Verunreinigungen des Harzes im Tank kommen.
-        \end{itemize}
-    \item Die Druckplatte aus dem Drucker nehmen, den Druck von dieser Plattform entfernen und in den Form Wash einlegen.
-    \item Nun die Druckplatte reinigen und nach kurzer Trocknungszeit wieder in den Drucker auf die Haltevorrichtung einsetzen. 
-    \item Form Wash nun starten und abwarten.
-    \begin{itemize}
-    	\item Die Standartzeit eines Waschdurchgangs beträgt 5 Minuten.
-    	\item Zum Starten im Menü des Wash START mit dem Dreh-Drück-Taster auswählen und mit einem sanften Druck bestätigen.
-    \end{itemize}
-        	\item Nach Abschluss des Waschdurchgangs fährt die Druckplatform eigenständig aus dem Wash heraus.
-        	\item Im besten Falle das Druckerzeugnis noch etwas hängen lassen, damit sich das Isopropanol vom Druck verflüchtigen kann.
-        	\item Ist der Druck vom Wash entnommen, kann im Menü des Wash die Haltevorrichtung wieder eingefahren werden. Hierzu Sleep auswählen und bestätigen. .
-            \item \textbf{Hinweis:} Bitte dabei möglichst schonend mit der Kostruktionsplattform umgehen, denn es kann sein das sich Tropfen mit Harz darunter sammeln und den Arbeitsbereich verdrecken.
-    \item Nachhärtung in dem Form Cure
-        \begin{itemize}
-            \item Hierzu den Druck in den Cure einlegen.
-            \item Das Material mindestens 15 min aushärten lassen. Hierzu im Menü des Cure die Parameter einstellen und bestätigen.
-        \end{itemize}
-
-    \item Entfernen der Stützstrukturen
-
+	\item \textbf{Ausrichtung:} Teile schräg stellen (etwa 30--45$^\circ$), nicht mit großen Flächen parallel zur Plattform. Kleine Schichten bedeuten geringe Abzugskräfte.
+	\item \textbf{Saugnapf-Effekt:} Becher, Schalen oder Kappen, deren Öffnung zur Folie zeigt, erzeugen beim Abziehen einen Unterdruck. Dadurch reißen Teile ab oder bekommen Löcher. Öffnung zur Plattform drehen oder Löcher vorsehen.
+	\item \textbf{Hohlkörper:} Große Teile aushöhlen (Wandstärke mindestens 2\,mm) und \textbf{Ablauflöcher} mit mindestens 3,5\,mm Durchmesser nahe der Plattform setzen, sonst bleibt flüssiges Harz eingeschlossen.
+	\item \textbf{Stützen und Inseln:} Punkte, die der Plattform am nächsten sind (Spitzen, Unterkanten im Druckbild), entstehen zuerst und hängen sonst frei im Harz. Jede solche Spitze braucht eine Stütze.
 \end{enumerate}
 
-%%%%%%%%%%%%%%%%%
+\begin{center}
+	\input{zeichnungen/druckbarkeit}
+\end{center}
+
+\subsection{Richtwerte für die Konstruktion}
+
+Richtwerte für SLA-Drucke nach Protolabs Network. Für belastete Teile Wände dicker wählen, das Harz ist nach dem Nachhärten eher spröde. Ein fehlgeschlagener Druck kann die Folie beschädigen.
+
+\begin{center}
+	\small
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\textbf{Merkmal} & \textbf{Richtwert} & \textbf{Hinweis} \\ \hline
+		Wand, an mindestens zwei Seiten verbunden & $\ge$ 0,4\,mm & \\ \hline
+		Freistehende Wand & $\ge$ 0,6\,mm & Übergang zur Basis abrunden. \\ \hline
+		Überhang ohne Stütze & $\le$ 1\,mm & mindestens 19$^\circ$ zur Waagerechten \\ \hline
+		Brücke ohne Stütze & $\le$ 21\,mm & \\ \hline
+		Erhabene Details (Schrift) & $\ge$ 0,1\,mm hoch & \\ \hline
+		Vertiefte Details (Gravur) & $\ge$ 0,4\,mm breit und tief & Sonst laufen sie zu. \\ \hline
+		Loch & $\ge$ 0,8\,mm & Kleinere Löcher wachsen zu. \\ \hline
+		Senkrechter Stift, Draht & $\ge$ 1,5\,mm & dünner nur mit Stütze \\ \hline
+		Spiel bewegliche Teile & 0,5\,mm & \\ \hline
+		Spiel gefügte Teile & 0,2\,mm & Presspassung: 0,1\,mm \\ \hline
+		Abstand zwischen Teilen & $\ge$ 1\,mm & \\ \hline
+		Ablaufloch bei Hohlkörpern & $\ge$ 3,5\,mm & mindestens eins pro Hohlraum \\ \hline
+		Wand beim Aushöhlen & $\ge$ 2\,mm & \\ \hline
+	\end{tabularx}
+\end{center}
+
+\section{Modell in Lychee Slicer vorbereiten}
+
+Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (Slicen). Dafür verwenden wir \textit{Lychee Slicer}. Die Arbeitsschritte stehen oben in der Mitte: \textit{Layout} (Modell platzieren), \textit{Prepare} (Stützen, Raft, Aushöhlen) und \textit{Exportieren}.
+
+\IfFileExists{zeichnungen/LycheeSlicer.png}{%
+\begin{figure}[H]
+	\centering
+	% Markierungen: Koordinaten relativ zum Bild (0,0 = unten links, 1,1 = oben rechts)
+	\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1pt, minimum size=4.8mm, inner sep=0pt, font=\bfseries\small}]
+		\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=\textwidth]{zeichnungen/LycheeSlicer.png}};
+		\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+			\begin{scope}[line width=1pt, white]
+				\draw (0.092, 0.843) -- (0.027, 0.901);
+				\draw (0.130, 0.843) -- (0.069, 0.901);
+				\draw (0.479, 0.843) -- (0.479, 0.900);
+				\draw (0.521, 0.843) -- (0.521, 0.908);
+				\draw (0.563, 0.843) -- (0.563, 0.908);
+				\draw (0.084, 0.598) -- (0.051, 0.598);
+			\end{scope}
+			\node[marke] at (0.092, 0.843) {1};
+			\node[marke] at (0.130, 0.843) {2};
+			\node[marke] at (0.479, 0.843) {3};
+			\node[marke] at (0.521, 0.843) {4};
+			\node[marke] at (0.563, 0.843) {5};
+			\node[marke] at (0.084, 0.598) {6};
+			\node[marke] at (0.200, 0.079) {7};
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Lychee Slicer: Drucker \textcircled{\small 1}, Harzprofil \textcircled{\small 2}, Arbeitsschritte \textit{Layout} \textcircled{\small 3}, \textit{Prepare} \textcircled{\small 4} und \textit{Exportieren} \textcircled{\small 5}, Bewegen/Drehen/Skalieren \textcircled{\small 6}, Statusanzeige mit Drucker, Harzprofil, Schichtdicke und Harzverbrauch \textcircled{\small 7}. Im Bild ist noch ein anderer Drucker eingestellt, bei uns muss dort \textit{UniFormation GKtwo} stehen.}
+	\label{abb.lychee}
+\end{figure}}{}
+
+\subsection{Drucker und Harz einstellen}
+
+\begin{itemize}
+	\item Oben links unter \textit{Drucker} \textcircled{\small 1} den \textbf{UniFormation GKtwo} und unter \textit{Resin} \textcircled{\small 2} das im FabLab angelegte Harzprofil \textbf{Phrozen Water-Washable Rapid Black} auswählen.
+	\item In der Statusanzeige unten links \textcircled{\small 7} kontrollieren: Drucker, Harzprofil und Schichtdicke 50\,µm. Belichtungszeiten und Schichtdicke sind im Profil fest eingestellt. Änderungen nur nach Absprache mit dem Maschinenverantwortlichen.
+	\item Modell per Drag-and-Drop, über \textit{Importieren} oder über \textit{Datei} \ra{} \textit{Öffnen} laden.
+	\item Bei Modellen in Zoll: Größe nach dem Laden prüfen und mit \textit{Skalieren} auf Millimeter umrechnen (Faktor 25,4).
+\end{itemize}
+
+\subsection{Layout: Ausrichten}
+
+Im Schritt \textit{Layout} \textcircled{\small 3} wird das Modell mit den Werkzeugen links platziert.
+
+\begin{itemize}
+	\item \textbf{Ausrichten:} Mit \textit{Bewegen}, \textit{Drehen} und \textit{Skalieren} \textcircled{\small 6} das Teil in der Regel \textbf{schräg} stellen (etwa 30--45$^\circ$). So ist jede Schicht kleiner, die Abzugskräfte sind geringer, und es entstehen keine Saugnäpfe. Große ebene Flächen nicht parallel zur Druckplattform legen. Sichtflächen möglichst von der Plattform wegdrehen, denn Stützen hinterlassen Spuren.
+	\item Mehrere Teile mit \textit{Anordnen} bzw.\ \textit{Alles Anordnen} verteilen, Mindestabstand 1\,mm.
+\end{itemize}
+
+\subsection{Prepare: Stützen, Raft und Aushöhlen}
+
+Im Schritt \textit{Prepare} \textcircled{\small 4} (Abbildung~\ref{abb.lychee}) werden Stützen, Raft und Hohlräume angelegt. Die Bereiche wählt man links aus, die Einstellungen erscheinen rechts. Die Nummern im folgenden Text beziehen sich auf Abbildung~\ref{abb.lychee-prepare}.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1pt, minimum size=4.8mm, inner sep=0pt, font=\bfseries\small}]
+		\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=\textwidth]{zeichnungen/LycheePrepare.png}};
+		\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+			\begin{scope}[line width=1pt, white]
+				\draw (0.079, 0.770) -- (0.051, 0.770);
+				\draw (0.079, 0.709) -- (0.051, 0.709);
+				\draw (0.079, 0.651) -- (0.051, 0.651);
+				\draw (0.747, 0.520) -- (0.773, 0.520);
+				\draw (0.747, 0.581) -- (0.773, 0.581);
+				\draw (0.932, 0.473) -- (0.907, 0.502);
+			\end{scope}
+			\node[marke] at (0.079, 0.770) {1};
+			\node[marke] at (0.079, 0.709) {2};
+			\node[marke] at (0.079, 0.651) {3};
+			\node[marke] at (0.747, 0.520) {4};
+			\node[marke] at (0.747, 0.581) {5};
+			\node[marke] at (0.932, 0.473) {6};
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Lychee Slicer, Schritt \textit{Prepare}: Stützen \textcircled{\small 1}, Raft \textcircled{\small 2}, Aushöhlen \textcircled{\small 3}, automatische Stützen \textcircled{\small 4}, Stützenstärke \textcircled{\small 5}, Inselerkennung \textcircled{\small 6}}
+	\label{abb.lychee-prepare}
+\end{figure}
+
+\begin{itemize}
+	\item \textbf{Aushöhlen:} Bei massiven Teilen unter \textit{Hollow} \textcircled{\small 3} das Teil aushöhlen und Ablauflöcher setzen, siehe Abschnitt~\ref{sec:druckbarkeit}. Das spart Harz und damit Geld. Erst aushöhlen, dann Stützen erzeugen.
+	\item \textbf{Stützen:} Unter \textit{Support} \textcircled{\small 1} mit \textit{Auto} \textcircled{\small 4} Stützen automatisch erzeugen. Die Stärke \textcircled{\small 5} in der Regel auf \textit{Medium} lassen, für große, schwere Teile \textit{schwer} wählen.
+	\item \textbf{Inseln prüfen:} Die Inselerkennung \textit{Island} \textcircled{\small 6} zeigt Stellen, die ohne Stütze in der Luft entstehen würden. Dort Stützen von Hand ergänzen.
+	\item \textbf{Raft:} Unter \textit{Raft} \textcircled{\small 2} den Raft \textbf{unten rechts} wählen (siehe Abbildung~\ref{abb.lychee-raft}). Die mit \textit{Plus} markierten Rafts sind in der kostenlosen Version von Lychee, die wir verwenden, nicht verfügbar. Der Raft haftet an der Druckplattform und trägt die Stützen. Nicht direkt auf die Plattform drucken.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.5\textwidth]{zeichnungen/LycheeRaft.png}};
+		\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+			\draw[line width=2pt, yellow] (0.784, 0.076) rectangle (0.960, 0.430);
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Raft-Auswahl in Lychee: Raft unten rechts verwenden}
+	\label{abb.lychee-raft}
+\end{figure}
+
+\subsection{Exportieren auf den USB-Stick}
+
+\begin{itemize}
+	\item Im Schritt \textit{Exportieren} \textcircled{\small 5} (Abbildung~\ref{abb.lychee}) die Druckdatei erzeugen und auf den \textbf{USB-Stick des Druckers} speichern. Dateiname eindeutig wählen, z.\,B. \enquote{Max\_Mustermann\_Dateiname}.
+	\item Unten links \textcircled{\small 7} (Abbildung~\ref{abb.lychee}) mit \textit{Estimate resin volume} den \textbf{Harzverbrauch in ml} anzeigen lassen und \textbf{notieren}. Er wird zum Bezahlen gebraucht. Daneben lässt sich die Druckzeit abschätzen.
+	\item Der Drucker ist \textbf{nicht im Netzwerk}. Druckdateien kommen nur per USB-Stick auf den Drucker.
+\end{itemize}
+
+\newpage
+
+\section{Drucken}
+
+\subsection{Vorbereitung am Drucker}
+
+\begin{itemize}
+	\item Schutzbrille und Nitrilhandschuhe anziehen.
+	\item Grüne Haube abnehmen und prüfen:
+	\begin{itemize}
+		\item Druckplattform sauber und mit dem Schnellspanner fest eingesetzt?
+		\item Keine ausgehärteten Reste oder Teile eines Fehldrucks im Tank? Im Zweifel einen Betreuer fragen.
+		\item Genug Harz im Tank? Der Füllstand muss für den angezeigten Verbrauch reichen und darf die MAX-Markierung nicht überschreiten.
+	\end{itemize}
+	\item Harz im Tank vorsichtig mit dem Silikonspatel umrühren, damit sich abgesetzte Farbpigmente verteilen. Nicht an der Folie kratzen.
+	\item Haube wieder aufsetzen.
+\end{itemize}
+
+\subsection{Druck starten}
+
+\begin{itemize}
+	\item USB-Stick in den Drucker stecken.
+	\item Am Touchscreen die Druckdatei auswählen. Sie wird zuerst in den internen Speicher des Druckers kopiert.
+	\item Vorschau, Druckzeit und Harzverbrauch prüfen und den Druck starten.
+	\item Der GKtwo heizt den Tank vor und beginnt erst, wenn das Harz die eingestellte Temperatur erreicht hat.
+	\item USB-Stick zurück an seinen Platz legen.
+	\item Wenn du nicht bis zum Druckende bleibst: Post-it mit Name und E-Mail-Adresse an den Drucker kleben. Der Druck darf über Nacht laufen.
+\end{itemize}
+
+\subsection{Druck abbrechen}
+
+\begin{itemize}
+	\item Druck abbrechen am Display des Druckers (\textit{Stopp}), wenn sichtbar Teile abgerissen sind, ungewöhnliche Geräusche auftreten, eine Fehlermeldung erscheint oder Harz ausläuft.
+	\item Nach einem Abbruch warten, bis die Plattform stillsteht, und einen \textbf{Betreuer informieren}. Abgerissene Teile im Tank können beim nächsten Druck die Folie und das LCD beschädigen.
+\end{itemize}
+
+\section{Nachbearbeitung}
+
+Ab jetzt immer \textbf{Schutzbrille} und \textbf{Nitrilhandschuhe} tragen. Gewaschen wird im \textbf{Form Wash}, nachgehärtet im \textbf{Form Cure}. Da das Harz wasserwaschbar ist, ist der Form Wash \textbf{mit Wasser statt mit Isopropanol} gefüllt.
+
+\begin{enumerate}
+	\item \textbf{Abtropfen lassen:} Nach Druckende fährt die Plattform nach oben. Einige Minuten warten, bis das Harz in den Tank zurückgetropft ist.
+	\item \textbf{Plattform abnehmen:} Haube abnehmen, Schnellspanner lösen und die Plattform leicht schräg über dem Tank herausnehmen. Haube sofort wieder aufsetzen, damit kein Licht an das Harz kommt.
+	\item \textbf{Teile ablösen:} Plattform auf die Unterlage legen. Den Spachtel flach unter den Raft schieben und die Teile ablösen, dabei den Spachtel \textbf{immer vom Körper weg} führen.
+	\item \textbf{Waschen im Form Wash:} Teile in den Korb legen. Am Form Wash mit dem Dreh-Drück-Knopf die Zeit auf \textbf{1 Minute} stellen und \textit{Start} wählen. Der Korb fährt ins Wasser und nach Ablauf wieder heraus. Nicht länger waschen, sonst leidet die Oberfläche. Danach mit \textit{Sleep} den Korb wieder einfahren.
+	\item \textbf{Trocknen:} Teile mindestens \textbf{30 Minuten} trocknen lassen oder mit Druckluft trocknen. Wasser auch aus Hohlräumen und Ablauflöchern entfernen. Nasse Teile nicht nachhärten, sonst entstehen weiße Flecken und Risse.
+	\item \textbf{Stützen entfernen:} Am besten vor dem Nachhärten, dann sind die Stützen noch weich und brechen sauber ab. Mit Seitenschneider oder Zange arbeiten.
+	\item \textbf{Nachhärten im Form Cure:} Teile auf den Drehteller legen, am Form Cure die Zeit auf \textbf{15 Minuten} stellen, \textbf{ohne Heizen} (Temperatur aus), und starten. Nicht deutlich länger härten, sonst werden die Teile spröde.
+	\item \textbf{Plattform reinigen:} Harzreste von der Druckplattform mit Papiertuch abwischen, Plattform mit Wasser reinigen, trocknen und wieder in den Drucker einsetzen.
+\end{enumerate}
+
+Harzverschmierte Papiertücher und Handschuhe erst in der Sonne oder unter UV-Licht aushärten lassen, dann in den Restmüll werfen.
 
 \section{Bezahlen und Abschließen}
 
-Nach der Nachbearbeitung des Druckteils ist die Arbeitsfläche aufzuräumen und dem Nächsten den Platz frei zu machen, und, sofern noch nicht geschehen, das verbrauchte Harzvolumen am Drucker abzulesen und zu notieren.\\
-Abgerechnet wird das Druckteil am Kassenterminal, hierzu ist das abgelesene Volumen Harz in $ml$ zu kennen, und am Kassenterminal auf ganze $ml$ aufgerundet zu bezahlen.
+\begin{itemize}
+	\item Arbeitsplatz aufräumen: Spachtel, Behälter und Unterlage säubern, Harzflecken sofort mit Papiertuch aufnehmen.
+	\item Bezahlt wird der in Lychee angezeigte Harzverbrauch in \textbf{ml}. Am Kassenterminal auf ganze ml aufrunden.
+	\item \textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
+	\item Probleme oder Schäden einem Betreuer melden.
+\end{itemize}
 
-%%%%%%%%%%%%
+\section{Infos für Betreuer}
 
-\section{Pflege \& Wartung --- \textcolor{red}{Nur von Betreuer durchzuführen}}
+\subsection{Harz}
 
-\subsection{Überprüfung des Verschmutzungsgrades des Isopropanols im FormWash}
-Da beim Waschen im FormWash nicht auspolymerisiertes Harz in das Isopropanol übergeht bzw. darin gelöst wird, ist Dieses nach einer gewissen Zeit verschmutzt und muss ausgetauscht werden. Da Isopropanol eine geringere molare Masse als das Harz hat, steigt mit zunehmender Harzkonzentration im Isopropanol die Dichte des Gemisches. Der Verschmutzungsgrad kann daher über eine simple Dichtemessung bestimmt werden.
+\begin{itemize}
+	\item Harzflasche vor dem Nachfüllen gut schütteln, dann erst in den Tank füllen. Füllstand höchstens bis zur MAX-Markierung.
+	\item Nach einem Fehldruck oder vor einer längeren Pause das Harz durch einen Papierfilter zurück in die Flasche gießen und den Tank reinigen.
+	\item Harz dunkel bei 15--35\,\textcelsius{} lagern.
+\end{itemize}
 
-Das eingesetzte Verfahren wird als Aräometrie bezeichnet und verwendet eine Tauchspindel mit einem definierten Gewicht und Volumen. Entsprechend dem archimedischen Prinzip verdrängt die Spindel jeweils ihr Eigengewicht, so dass sie in dichteren Flüssigkeiten weniger tief eintaucht. Die Eintauchtiefe ist daher linear proprotional zur Dichte der Flüssigkeit die gemessen wird.
+\subsection{Waschwasser im Form Wash}
 
-Die Tauchspindel des FormWash befindet sich hinten rechts am FormWash hinter einer Klappe. An der Spindel sind auf dem Schwimmer kurze und lange "Flügel" nach oben. Nachdem frisches Isopropanol in den FormWash gegeben wurde, wird der rote Gummiring an der Spindel so eingestellt und positioniert, dass er auf der Höhe der kurzen "Flügel", also an der Oberkante des Körpers des Schwimmers ist. Damit ist der Nullpunkt festgelegt. Mit zunehmender Verschmutzung und damit Dichte schwimmt die Spindel mit dem roten Gummiring bei jeder Messung etwas höher. Sobald er bei einer Messung auf der Höhe der beiden längeren (oberen) Flügel schwimmt, ist das Isopropanol verbraucht und muss baldmöglichst ausgetauscht werden.
+\begin{itemize}
+	\item Der Form Wash ist mit \textbf{Wasser} gefüllt, nicht mit Isopropanol. Die Tauchspindel des Form Wash ist auf Isopropanol ausgelegt und hier nicht aussagekräftig.
+	\item Waschwasser wechseln, wenn es deutlich trüb ist oder die Teile klebrig bleiben.
+	\item Altes Waschwasser \textbf{nicht in den Abfluss} gießen. In einem offenen, durchsichtigen Behälter einige Tage in die Sonne oder unter UV-Licht stellen, bis das gelöste Harz ausgehärtet und abgesetzt ist. Die festen Reste abfiltern und im Restmüll entsorgen.
+\end{itemize}
 
-\subsection{Wechseln des Harzes}
-Der SLA-Drucekr ist von uns dafür gedacht, dass das Harz gewechselt werden kann. Dies ist jedoch nur von einem eingewiesenen Betreuer durchzuführen. 
+\subsection{nFEP-Folie}
 
-Hierzu muss sichergestellt werden, dass die Druckplattform gereinigt und frei von Kontaminationen ist. Auch soll darauf geachtet werden, dass keine Rückstände von Isopropanol auf der Druckplattform zu finden sind.\\
-Anschließend kann der gesamte Harztank gelöst werden, dies indem man links und rechts am Tank greift und, wie zuvor, mit einem Sanften Zug zum Benutzer hin den Tank löst. \\
+\begin{itemize}
+	\item Die Folie vor jedem Druck auf Kratzer, Dellen, Löcher und Trübung prüfen. Bei Beschädigung tauschen, sonst kann Harz auf das LCD laufen.
+	\item Fingerabdrücke und Schlieren auf der Unterseite der Folie mit Isopropanol und einem fusselfreien Tuch abwischen.
+	\item Ausgehärtete Reste im Tank vorsichtig mit dem Silikonspatel lösen, nie mit Metall.
+\end{itemize}
 
-\subsection{nFEP Folie}
-Zur Reinigung des der nFEP Folie unter dem Harztanks bei Verschmutzung durch Schlieren oder Fingerabdrücken.
+\subsection{Typische Fehler}
 
-%%%%%%%%%%%%
+\begin{itemize}
+	\item \textbf{Nichts an der Plattform:} Plattform nivellieren, Harztemperatur und Belichtung der ersten Schichten prüfen, Tank auf Reste prüfen.
+	\item \textbf{Teile abgerissen, Stücke im Tank:} Harz filtern, Tank reinigen, Stützen und Ausrichtung im Slicer verbessern.
+	\item \textbf{Löcher oder Risse in Hohlkörpern:} Saugnapf-Effekt, Ablauflöcher fehlen.
+	\item \textbf{Weiße Flecken nach dem Nachhärten:} Teile waren beim Härten noch nass.
+\end{itemize}
+
+\subsection{Wartungsintervalle}
+
+Folie, LCD-Schutzfolie und Filter nur im ausgeschalteten Zustand tauschen. Zum Nivellieren muss der Drucker eingeschaltet sein, dabei die Anleitung von UniFormation befolgen.
+
+\begin{center}
+	\small
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\textbf{Bauteil} & \textbf{Intervall} & \textbf{Maßnahme} \\ \hline
+		nFEP-Folie & vor jedem Druck & Sichtprüfung, bei Beschädigung oder starker Trübung tauschen. \\ \hline
+		Harz im Tank & vor jedem Druck & Umrühren. Nach Fehldrucken filtern. \\ \hline
+		Druckplattform & nach jedem Druck & Reinigen. Bei Haftungsproblemen neu nivellieren. \\ \hline
+		Waschwasser & bei Trübung & Wechseln und alten Inhalt aushärten, siehe oben. \\ \hline
+		LCD-Schutzfolie & bei Bedarf & Bei Kratzern oder Harz auf dem LCD tauschen. \\ \hline
+		Aktivkohlefilter & alle 3 Monate & Filter hinten am Drucker tauschen. \\ \hline
+		Z-Achse & alle 3 Monate & Gewindespindel und Führung reinigen und dünn fetten. \\ \hline
+	\end{tabularx}
+\end{center}
+
+\noindent\begin{minipage}{0.75\textwidth}
+	Anleitungen und Videos von UniFormation zum Nivellieren, Folienwechsel, Tausch der LCD-Schutzfolie und Filtern des Harzes: \href{https://uniformation3d.com/pages/gktwo-guide}{GKtwo Guide}
+\end{minipage}\hfill
+\qrcode[height=2cm]{https://uniformation3d.com/pages/gktwo-guide}
 
 \ccLicense{sla-drucker-einweisung}{Einweisung SLA-Drucker}
 

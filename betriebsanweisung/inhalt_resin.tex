@@ -1,0 +1,89 @@
+% =====================================================================
+%  Betriebsanweisung (Gefahrstoff) Phrozen Water-Washable Rapid Black
+%  (wird von SLA_Drucker_Einweisung.tex eingebunden)
+%  Grundlage: Kennzeichnung von Phrozen Water-Washable Resin Schwarz
+%  (Rapid Black) laut EU-Händlerangabe (3djake.de, Stand 28.09.2026):
+%  GHS05, GHS07, GHS08, GHS09, Signalwort Gefahr,
+%  H315, H317, H318, H335, H360FD, H373, H410.
+%  Das Sicherheitsdatenblatt des Herstellers muss im FabLab vorliegen.
+% =====================================================================
+
+\BAgefahrstofffarbe
+\renewcommand{\BAgrundlage}{gemäß § 14 GefStoffV und TRGS 555}
+\renewcommand{\BAgeraetlabel}{Gefahrstoff:}
+\renewcommand{\BAgeraet}{Phrozen Water-Washable Rapid Black -- flüssiges Photopolymer-Harz
+  auf Acrylatbasis}
+\renewcommand{\BAnummer}{BA-GS-01}
+% Signalwort im Kopf, Piktogramme im Abschnitt Gefahren
+\renewcommand{\BAgeraetbilder}{{\bfseries\large GEFAHR}}
+
+\BAkopf{Drucken, Waschen im Form Wash (Wasser), Nachhärten, Harz einfüllen, Entsorgung}
+
+% ---------- 1 Gefahren -----------------------------------------------
+\BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{GHS08,GHS05,GHS07,GHS09}{%
+  \begin{itemize}
+    \item \textbf{Kann die Fruchtbarkeit beeinträchtigen. Kann das Kind im
+          Mutterleib schädigen} (H360FD).
+    \item \textbf{Verursacht schwere Augenschäden} (H318).
+    \item \textbf{Kann allergische Hautreaktionen verursachen} (H317). Eine
+          Allergie gegen Acrylate bleibt ein Leben lang bestehen.
+    \item Verursacht Hautreizungen (H315). Kann die Atemwege reizen (H335).
+          Kann die Organe schädigen bei längerer oder wiederholter
+          Exposition (H373).
+    \item \textbf{Sehr giftig für Wasserorganismen} mit langfristiger
+          Wirkung (H410).
+    \item Das gilt auch für \textbf{Waschwasser} und für nicht nachgehärtete
+          Druckteile.
+  \end{itemize}}
+
+% ---------- 2 Schutzmaßnahmen ----------------------------------------
+\BAblock{SCHUTZMASSNAHMEN UND VERHALTENSREGELN}{M004,M009,P022}{%
+  \begin{itemize}
+    \item \textbf{Schwangere und Stillende dürfen nicht mit dem Harz
+          arbeiten} (Mutterschutzgesetz).
+    \item \textbf{Schutzbrille} und \textbf{Nitrilhandschuhe} tragen;
+          verschmutzte Handschuhe sofort wechseln.
+    \item Haut- und Augenkontakt vermeiden, Dämpfe nicht einatmen.
+          Raum gut lüften, Drucker- und Flaschendeckel geschlossen halten.
+    \item Teile erst nach Waschen und Nachhärten ohne Handschuhe anfassen.
+    \item Nach der Arbeit Hände waschen. Essen und Trinken verboten.
+    \item Lagerung unter Verschluss, dunkel bei 15--35\,\textcelsius{},
+          Flasche dicht verschlossen, nie in Lebensmittelgefäße umfüllen.
+  \end{itemize}}
+
+% ---------- 3 Gefahrfall ---------------------------------------------
+\BAblock{VERHALTEN IM GEFAHRFALL}{W001,F001}{%
+  \begin{itemize}
+    \item Verschüttetes Harz mit Papiertüchern oder Bindemittel aufnehmen,
+          nicht in den Abfluss gelangen lassen, Betreuer informieren.
+    \item Verschmutzte Kleidung sofort ausziehen.
+    \item Brand: Löschen mit Wassersprühstrahl, CO\textsubscript{2} oder
+          Pulver. Brandgase (CO, NO\textsubscript{x}) nicht einatmen.
+          \textbf{Feuerwehr: 112}
+  \end{itemize}}
+
+% ---------- 4 Erste Hilfe --------------------------------------------
+\BAblock{ERSTE HILFE}{E003,E011}{%
+  \begin{itemize}
+    \item \textbf{Augen:} sofort mindestens 10 Min.\ bei geöffnetem Lid mit
+          Wasser spülen, Kontaktlinsen entfernen, \textbf{sofort Augenarzt}.
+    \item \textbf{Haut:} mit viel Wasser und Seife waschen. Bei Rötung
+          oder Ausschlag Arzt aufsuchen.
+    \item \textbf{Einatmen:} an die frische Luft, bei Beschwerden Arzt.
+    \item \textbf{Verschlucken:} Mund ausspülen, kein Erbrechen
+          herbeiführen, Arzt.
+    \item Dem Arzt das Sicherheitsdatenblatt oder die Flasche zeigen.
+  \end{itemize}\vspace{1.5mm}
+  \textbf{Notruf: 112}\qquad Giftnotruf München: 089\,/\,19240\qquad
+  FabLab: 09131\,/\,85\,28013}
+
+% ---------- 5 Entsorgung (mit Fußzeile) --------------------------------
+\BAletzterblock{SACHGERECHTE ENTSORGUNG}{}{%
+  \begin{itemize}
+    \item Flüssiges Harz und \textbf{Waschwasser nie in den Abfluss}.
+          Das Waschwasser bleibt im Form Wash.
+    \item Harzreste, Tücher und Handschuhe mit UV-Licht vollständig
+          aushärten, danach im Restmüll entsorgen.
+    \item Altes Waschwasser entsorgen nur Betreuer: aushärten lassen,
+          feste Reste abfiltern (Restmüll).
+  \end{itemize}}
