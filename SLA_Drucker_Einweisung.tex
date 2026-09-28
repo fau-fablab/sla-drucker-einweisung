@@ -120,24 +120,46 @@ UniFormation GKtwo: 228\,mm $\times$ 128\,mm $\times$ 245\,mm (L\,$\times$\,B\,$
 
 Die Druckzeit hängt fast nur von der Höhe ab: Jede Schicht wird in einem Schritt belichtet, egal wie viele Teile auf der Plattform stehen. Mehrere Teile gleichzeitig zu drucken kostet also kaum zusätzliche Zeit.
 
-\subsection{Designrichtlinien für Resin-Drucke}
+\subsection{Druckbarkeit}\label{sec:druckbarkeit}
 
-Die folgenden Werte sind Richtwerte. Sie dürfen über- oder unterschritten werden, wenn es einen Grund dafür gibt, aber nur mit Vorsicht. Ein fehlgeschlagener Druck kann die Folie beschädigen und erfordert dann eine Wartung.
+Resin-Drucker drucken \textbf{kopfüber}: Die Druckplattform taucht von oben in den Tank, jede Schicht wird durch die Folie am Tankboden belichtet und danach von der Folie abgezogen. Daraus ergeben sich die wichtigsten Regeln (Nummern wie in der Abbildung):
 
-\begin{itemize}
-	\item \textbf{Mindestdicke von gestützten Wänden:} 0,4\,mm
-	\item \textbf{Mindestdicke nicht gestützter Wände:} 0,6\,mm
-	\item \textbf{Maximale Länge nicht gestützter Überhänge:} 1,0\,mm
-	\item \textbf{Mindestwinkel für nicht gestützte Überhänge:} 19$^\circ$ zur Waagerechten
-	\item \textbf{Maximale horizontale Stützbrücke:} 21\,mm
-	\item \textbf{Mindestdurchmesser von vertikalen Drähten:} 1,5\,mm
-	\item \textbf{Mindestwert für geprägte Details:} 0,1\,mm
-	\item \textbf{Mindestwert für eingravierte Details:} 0,4\,mm
-	\item \textbf{Mindestabstand zwischen mehreren Druckteilen:} 1\,mm
-	\item \textbf{Mindestdurchmesser für Aussparungen:} 0,5\,mm
-	\item \textbf{Hohlkörper:} Große Volumen in Lychee aushöhlen und \textbf{Ablauflöcher} setzen, damit das Harz innen abfließen und Wasser zum Waschen hineinkommen kann. Durchmesser mindestens 3,5\,mm, am besten zwei Löcher nahe der Druckplattform.
-	\item \textbf{Saugnapf-Effekt:} Becher, Schalen oder Kappen, deren Öffnung zur Folie zeigt, und geschlossene Hohlkörper ohne Löcher erzeugen beim Abziehen von der Folie einen Unterdruck. Dadurch reißen Teile ab oder bekommen Löcher. Solche Teile schräg stellen oder Ablauflöcher vorsehen.
-\end{itemize}
+\begin{enumerate}
+	\item \textbf{Ausrichtung:} Teile schräg stellen (etwa 30--45$^\circ$), nicht mit großen Flächen parallel zur Plattform. Kleine Schichten bedeuten geringe Abzugskräfte.
+	\item \textbf{Saugnapf-Effekt:} Becher, Schalen oder Kappen, deren Öffnung zur Folie zeigt, erzeugen beim Abziehen einen Unterdruck. Dadurch reißen Teile ab oder bekommen Löcher. Öffnung zur Plattform drehen oder Löcher vorsehen.
+	\item \textbf{Hohlkörper:} Große Teile aushöhlen (Wandstärke mindestens 2\,mm) und \textbf{Ablauflöcher} mit mindestens 3,5\,mm Durchmesser nahe der Plattform setzen, sonst bleibt flüssiges Harz eingeschlossen.
+	\item \textbf{Stützen und Inseln:} Punkte, die der Plattform am nächsten sind (Spitzen, Unterkanten im Druckbild), entstehen zuerst und hängen sonst frei im Harz. Jede solche Spitze braucht eine Stütze.
+\end{enumerate}
+
+\begin{center}
+	\input{zeichnungen/druckbarkeit}
+\end{center}
+
+\subsection{Richtwerte für die Konstruktion}
+
+Richtwerte für SLA-Drucke nach Protolabs Network. Für belastete Teile Wände dicker wählen, das Harz ist nach dem Nachhärten eher spröde. Ein fehlgeschlagener Druck kann die Folie beschädigen.
+
+\begin{center}
+	\small
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\textbf{Merkmal} & \textbf{Richtwert} & \textbf{Hinweis} \\ \hline
+		Wand, an mindestens zwei Seiten verbunden & $\ge$ 0,4\,mm & \\ \hline
+		Freistehende Wand & $\ge$ 0,6\,mm & Übergang zur Basis abrunden. \\ \hline
+		Überhang ohne Stütze & $\le$ 1\,mm & mindestens 19$^\circ$ zur Waagerechten \\ \hline
+		Brücke ohne Stütze & $\le$ 21\,mm & \\ \hline
+		Erhabene Details (Schrift) & $\ge$ 0,1\,mm hoch & \\ \hline
+		Vertiefte Details (Gravur) & $\ge$ 0,4\,mm breit und tief & Sonst laufen sie zu. \\ \hline
+		Loch & $\ge$ 0,8\,mm & Kleinere Löcher wachsen zu. \\ \hline
+		Senkrechter Stift, Draht & $\ge$ 1,5\,mm & dünner nur mit Stütze \\ \hline
+		Spiel bewegliche Teile & 0,5\,mm & \\ \hline
+		Spiel gefügte Teile & 0,2\,mm & Presspassung: 0,1\,mm \\ \hline
+		Abstand zwischen Teilen & $\ge$ 1\,mm & \\ \hline
+		Ablaufloch bei Hohlkörpern & $\ge$ 3,5\,mm & mindestens eins pro Hohlraum \\ \hline
+		Wand beim Aushöhlen & $\ge$ 2\,mm & \\ \hline
+	\end{tabularx}
+\end{center}
 
 \section{Modell in Lychee Slicer vorbereiten}
 
@@ -219,7 +241,7 @@ Im Schritt \textit{Prepare} \textcircled{\small 4} (Abbildung~\ref{abb.lychee}) 
 \end{figure}
 
 \begin{itemize}
-	\item \textbf{Aushöhlen:} Bei massiven Teilen unter \textit{Hollow} \textcircled{\small 3} das Teil aushöhlen und Ablauflöcher setzen, siehe Designrichtlinien. Das spart Harz und damit Geld. Erst aushöhlen, dann Stützen erzeugen.
+	\item \textbf{Aushöhlen:} Bei massiven Teilen unter \textit{Hollow} \textcircled{\small 3} das Teil aushöhlen und Ablauflöcher setzen, siehe Abschnitt~\ref{sec:druckbarkeit}. Das spart Harz und damit Geld. Erst aushöhlen, dann Stützen erzeugen.
 	\item \textbf{Stützen:} Unter \textit{Support} \textcircled{\small 1} mit \textit{Auto} \textcircled{\small 4} Stützen automatisch erzeugen. Die Stärke \textcircled{\small 5} in der Regel auf \textit{Medium} lassen, für große, schwere Teile \textit{schwer} wählen.
 	\item \textbf{Inseln prüfen:} Die Inselerkennung \textit{Island} \textcircled{\small 6} zeigt Stellen, die ohne Stütze in der Luft entstehen würden. Dort Stützen von Hand ergänzen.
 	\item \textbf{Raft:} Unter \textit{Raft} \textcircled{\small 2} den gitterförmigen Raft wählen (in der Auswahl \textbf{unten links}, siehe Abbildung~\ref{abb.lychee-raft}). Der Raft haftet an der Druckplattform und trägt die Stützen. Nicht direkt auf die Plattform drucken.
