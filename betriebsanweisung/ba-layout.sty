@@ -73,14 +73,12 @@
 \newcommand{\BAgeraetbilder}{}
 
 % ---------------------------------------------------------------------
-%  Symbole: \BAsymlist{W017,W024}  (Dateien in symbole/)
+%  Symbole: \BAsymlist{W017,W024}  (Dateien in symbole/), leer = kein Symbol
 % ---------------------------------------------------------------------
 \newcommand{\BAsymbol}[1]{\includegraphics[width=\BAsym]{#1}}
 \newcommand{\BAsymlist}[1]{%
-  \@for\BA@s:=#1\do{\BAsymbol{\BA@s}\par\vspace{1.5mm}}\vspace{-1.5mm}}
-% Symbole nebeneinander, z.B. GHS-Piktogramme: \BAsymreihe{GHS05,GHS07}
-\newcommand{\BAsymreihe}[1]{%
-  \@for\BA@s:=#1\do{\includegraphics[width=0.48\BAsymw]{\BA@s}\allowbreak}}
+  \@for\BA@s:=#1\do{\ifx\BA@s\@empty\else\BAsymbol{\BA@s}\par\vspace{1.5mm}\fi}%
+  \vspace{-1.5mm}}
 
 % ---------------------------------------------------------------------
 %  Kopf
