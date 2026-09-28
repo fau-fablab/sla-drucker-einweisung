@@ -11,6 +11,11 @@
 \usepackage{textcomp} % \textcelsius
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
 \usepackage{float} % Ermöglicht H als Platzierungsoption
+\usepackage{betriebsanweisung/ba-layout}
+
+% Stammdaten der Betriebsanweisungen
+% (Inhalt: betriebsanweisung/inhalt_gktwo.tex und betriebsanweisung/inhalt_resin.tex)
+\input{betriebsanweisung/stammdaten}
 
 \newcommand{\ra}{$\Rightarrow$}
 
@@ -80,6 +85,17 @@ Bei allen Arbeiten am Drucker und bei der Nachbearbeitung der Teile sind zu trag
     \item \textbf{Einweghandschuhe}
 \end{itemize}
 Erst nach dem Waschen und Nachbelichten dürfen die Teile ohne Handschuhe angefasst werden. Vorher können sich noch Reste von unpolymerisiertem Kunststoff auf der Oberfläche befinden.
+
+Zusätzlich gilt die \textbf{Betriebsanweisung} für den Drucker (Abschnitt~\ref{sec:ba-gktwo}). Sie hängt am Drucker aus und ist Bestandteil dieser Einweisung.
+\newpage
+
+% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
+\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
+\thispagestyle{empty}
+\refstepcounter{section}\label{sec:ba-gktwo}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung UniFormation GKtwo}
+{\small\input{betriebsanweisung/inhalt_gktwo}}
+\restoregeometry
 \newpage
 
 % % % % % % %
