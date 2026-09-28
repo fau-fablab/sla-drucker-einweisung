@@ -1,7 +1,9 @@
 SLA Drucker Einweisung
 =========================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) für den SLA Drucker
+Einweisung des [FAU FabLab](https://fablab.fau.de) für den SLA-Drucker UniFormation GKtwo mit Lychee Slicer und dem Harz Phrozen Water-Washable Rapid Black.
+
+Die Einweisung enthält die Betriebsanweisungen für den Drucker (`betriebsanweisung/inhalt_gktwo.tex`) und für das Harz als Gefahrstoff (`betriebsanweisung/inhalt_resin.tex`). Gemeinsame Stammdaten stehen in `betriebsanweisung/stammdaten.tex`.
 
 Die neueste Version gibt es hier zum Download als PDF:
 * [Einweisung](https://brain.fablab.fau.de/build/sla-drucker-einweisung/SLA_Drucker_Einweisung.pdf)
