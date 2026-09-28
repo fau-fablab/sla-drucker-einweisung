@@ -120,7 +120,7 @@ Die Druckzeit hängt fast nur von der Höhe ab: Jede Schicht wird in einem Schri
 
 \subsection{Designrichtlinien für Resin-Drucke}
 
-Die folgenden Werte sind empfohlene Mindestwerte. Sie dürfen über- oder unterschritten werden, wenn es einen Grund dafür gibt, aber nur mit Vorsicht. Ein fehlgeschlagener Druck kann die Folie beschädigen und erfordert dann eine Wartung.
+Die folgenden Werte sind Richtwerte. Sie dürfen über- oder unterschritten werden, wenn es einen Grund dafür gibt, aber nur mit Vorsicht. Ein fehlgeschlagener Druck kann die Folie beschädigen und erfordert dann eine Wartung.
 
 \begin{itemize}
 	\item \textbf{Mindestdicke von gestützten Wänden:} 0,4\,mm
@@ -134,7 +134,7 @@ Die folgenden Werte sind empfohlene Mindestwerte. Sie dürfen über- oder unters
 	\item \textbf{Mindestabstand zwischen mehreren Druckteilen:} 1\,mm
 	\item \textbf{Mindestdurchmesser für Aussparungen:} 0,5\,mm
 	\item \textbf{Hohlkörper:} Große Volumen in Lychee aushöhlen und \textbf{Ablauflöcher} setzen, damit das Harz innen abfließen und Wasser zum Waschen hineinkommen kann. Durchmesser mindestens 3,5\,mm, am besten zwei Löcher nahe der Druckplattform.
-	\item \textbf{Saugnapf-Effekt:} Hohle Formen, die zur Folie hin offen oder geschlossen sind (Becher, Schalen, Kappen), saugen sich an der Folie fest und reißen ab. Solche Teile schräg stellen oder Ablauflöcher vorsehen.
+	\item \textbf{Saugnapf-Effekt:} Becher, Schalen oder Kappen, deren Öffnung zur Folie zeigt, und geschlossene Hohlkörper ohne Löcher erzeugen beim Abziehen von der Folie einen Unterdruck. Dadurch reißen Teile ab oder bekommen Löcher. Solche Teile schräg stellen oder Ablauflöcher vorsehen.
 \end{itemize}
 
 \section{Modell in Lychee Slicer vorbereiten}
@@ -145,7 +145,7 @@ Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (
 
 \begin{itemize}
 	\item Lychee Slicer öffnen und oben als Drucker den \textbf{UniFormation GKtwo} auswählen.
-	\item Als Harzprofil \textbf{Phrozen Water-Washable Rapid Black} auswählen. Belichtungszeiten und Schichtdicke (50\,µm) sind im Profil fest eingestellt. Änderungen nur nach Absprache mit dem Maschinenverantwortlichen.
+	\item Das im FabLab angelegte Harzprofil \textbf{Phrozen Water-Washable Rapid Black} auswählen. Belichtungszeiten und Schichtdicke (50\,µm) sind im Profil fest eingestellt. Änderungen nur nach Absprache mit dem Maschinenverantwortlichen.
 	\item Modell per Drag-and-Drop oder über \textit{Datei} \ra{} \textit{Öffnen} laden.
 	\item Bei Modellen in Zoll: Größe nach dem Laden prüfen und mit dem Werkzeug \textit{Skalieren} auf Millimeter umrechnen (Faktor 25,4).
 \end{itemize}
@@ -200,7 +200,7 @@ Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (
 \subsection{Druck abbrechen}
 
 \begin{itemize}
-	\item Druck abbrechen am Display des Druckers (\textit{Stopp}), wenn nichts an der Plattform haftet, Teile abgerissen sind, ungewöhnliche Geräusche auftreten oder Harz ausläuft.
+	\item Druck abbrechen am Display des Druckers (\textit{Stopp}), wenn sichtbar Teile abgerissen sind, ungewöhnliche Geräusche auftreten, eine Fehlermeldung erscheint oder Harz ausläuft.
 	\item Nach einem Abbruch warten, bis die Plattform stillsteht, und einen \textbf{Betreuer informieren}. Abgerissene Teile im Tank können beim nächsten Druck die Folie und das LCD beschädigen.
 \end{itemize}
 
@@ -225,7 +225,7 @@ Harzverschmierte Papiertücher und Handschuhe erst in der Sonne oder unter UV-Li
 
 \begin{itemize}
 	\item Arbeitsplatz aufräumen: Spachtel, Behälter und Unterlage säubern, Harzflecken sofort mit Papiertuch aufnehmen.
-	\item Bezahlt wird das verbrauchte Harz in \textbf{ml}, wie es Lychee und das Display des Druckers angeben. Am Kassenterminal auf ganze ml aufrunden.
+	\item Bezahlt wird der in Lychee angezeigte Harzverbrauch in \textbf{ml}. Am Kassenterminal auf ganze ml aufrunden.
 	\item \textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
 	\item Probleme oder Schäden einem Betreuer melden.
 \end{itemize}
@@ -243,9 +243,9 @@ Harzverschmierte Papiertücher und Handschuhe erst in der Sonne oder unter UV-Li
 \subsection{Waschwasser im Form Wash}
 
 \begin{itemize}
-	\item Der Form Wash ist mit \textbf{Wasser} gefüllt, nicht mit Isopropanol. Die Tauchspindel zur Dichtemessung ist dafür nicht aussagekräftig.
+	\item Der Form Wash ist mit \textbf{Wasser} gefüllt, nicht mit Isopropanol. Die Tauchspindel des Form Wash ist auf Isopropanol ausgelegt und hier nicht aussagekräftig.
 	\item Waschwasser wechseln, wenn es deutlich trüb ist oder die Teile klebrig bleiben.
-	\item Altes Waschwasser \textbf{nicht in den Abfluss} gießen. In einem offenen, durchsichtigen Behälter in die Sonne oder unter UV-Licht stellen, bis das gelöste Harz ausgehärtet und abgesetzt ist. Die festen Reste abfiltern und im Restmüll entsorgen.
+	\item Altes Waschwasser \textbf{nicht in den Abfluss} gießen. In einem offenen, durchsichtigen Behälter einige Tage in die Sonne oder unter UV-Licht stellen, bis das gelöste Harz ausgehärtet und abgesetzt ist. Die festen Reste abfiltern und im Restmüll entsorgen.
 \end{itemize}
 
 \subsection{nFEP-Folie}
@@ -267,7 +267,7 @@ Harzverschmierte Papiertücher und Handschuhe erst in der Sonne oder unter UV-Li
 
 \subsection{Wartungsintervalle}
 
-Wartung nur im ausgeschalteten Zustand (siehe Betriebsanweisung).
+Folie, LCD-Schutzfolie und Filter nur im ausgeschalteten Zustand tauschen. Zum Nivellieren muss der Drucker eingeschaltet sein, dabei die Anleitung von UniFormation befolgen.
 
 \begin{center}
 	\small
