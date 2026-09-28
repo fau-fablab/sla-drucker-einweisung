@@ -9,6 +9,9 @@ Die neueste Version gibt es hier zum Download als PDF:
 * [Einweisung](https://brain.fablab.fau.de/build/sla-drucker-einweisung/SLA_Drucker_Einweisung.pdf)
 * [Einweisungsliste](https://brain.fablab.fau.de/build/sla-drucker-einweisung/SLA_Drucker_Einweisungsliste.pdf)
 
+Zusätzlich baut eine GitHub Action bei jedem Push auf `master` ein Release mit Datums-Version (`vJJJJ.MM.TT`) und den PDFs:
+* [Releases auf GitHub](https://github.com/fau-fablab/sla-drucker-einweisung/releases)
+
 auschecken
 ----------
 
@@ -16,10 +19,11 @@ auschecken
 git clone --recursive git@github.com:fau-fablab/sla-drucker-einweisung.git
 ```
 
-Technische Details zum Buildserver siehe auf macgyver /home/buildserver/README
+Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
-[![Build Status](https://user.fablab.fau.de/~buildserver/sla-drucker-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/sla-drucker-einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/sla-drucker-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/sla-drucker-einweisung/)
+[![Build Status](https://brain.fablab.fau.de/build/sla-drucker-einweisung/status.svg)](https://brain.fablab.fau.de/build/sla-drucker-einweisung/)
+[![TODOs](https://brain.fablab.fau.de/build/sla-drucker-einweisung/status-todos.svg)](https://brain.fablab.fau.de/build/sla-drucker-einweisung/)
+[![PDF bauen](https://github.com/fau-fablab/sla-drucker-einweisung/actions/workflows/pdf.yml/badge.svg)](https://github.com/fau-fablab/sla-drucker-einweisung/actions/workflows/pdf.yml)
 
 
 Lizenz
