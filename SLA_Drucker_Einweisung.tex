@@ -139,7 +139,7 @@ Die folgenden Werte sind Richtwerte. Sie dürfen über- oder unterschritten werd
 
 \section{Modell in Lychee Slicer vorbereiten}
 
-Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (Slicen). Dafür verwenden wir \textit{Lychee Slicer}. Die Arbeitsschritte stehen oben in der Mitte: \textit{Layout} (Modell platzieren), \textit{Prepare} (Stützen) und \textit{Exportieren}.
+Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (Slicen). Dafür verwenden wir \textit{Lychee Slicer}. Die Arbeitsschritte stehen oben in der Mitte: \textit{Layout} (Modell platzieren), \textit{Prepare} (Stützen, Raft, Aushöhlen) und \textit{Exportieren}.
 
 \IfFileExists{zeichnungen/LycheeSlicer.png}{%
 \begin{figure}[H]
@@ -155,7 +155,6 @@ Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (
 				\draw (0.521, 0.843) -- (0.521, 0.908);
 				\draw (0.563, 0.843) -- (0.563, 0.908);
 				\draw (0.084, 0.598) -- (0.051, 0.598);
-				\draw (0.084, 0.358) -- (0.051, 0.358);
 			\end{scope}
 			\node[marke] at (0.092, 0.843) {1};
 			\node[marke] at (0.130, 0.843) {2};
@@ -163,11 +162,10 @@ Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (
 			\node[marke] at (0.521, 0.843) {4};
 			\node[marke] at (0.563, 0.843) {5};
 			\node[marke] at (0.084, 0.598) {6};
-			\node[marke] at (0.084, 0.358) {7};
-			\node[marke] at (0.200, 0.079) {8};
+			\node[marke] at (0.200, 0.079) {7};
 		\end{scope}
 	\end{tikzpicture}
-	\caption{Lychee Slicer: Drucker \textcircled{\small 1}, Harzprofil \textcircled{\small 2}, Arbeitsschritte \textit{Layout} \textcircled{\small 3}, \textit{Prepare} \textcircled{\small 4} und \textit{Exportieren} \textcircled{\small 5}, Bewegen/Drehen/Skalieren \textcircled{\small 6}, Werkzeuge zum Aushöhlen und für Löcher \textcircled{\small 7}, Statusanzeige mit Drucker, Harzprofil, Schichtdicke und Harzverbrauch \textcircled{\small 8}. Im Bild ist noch ein anderer Drucker eingestellt, bei uns muss dort \textit{UniFormation GKtwo} stehen.}
+	\caption{Lychee Slicer: Drucker \textcircled{\small 1}, Harzprofil \textcircled{\small 2}, Arbeitsschritte \textit{Layout} \textcircled{\small 3}, \textit{Prepare} \textcircled{\small 4} und \textit{Exportieren} \textcircled{\small 5}, Bewegen/Drehen/Skalieren \textcircled{\small 6}, Statusanzeige mit Drucker, Harzprofil, Schichtdicke und Harzverbrauch \textcircled{\small 7}. Im Bild ist noch ein anderer Drucker eingestellt, bei uns muss dort \textit{UniFormation GKtwo} stehen.}
 	\label{abb.lychee}
 \end{figure}}{}
 
@@ -175,33 +173,73 @@ Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden (
 
 \begin{itemize}
 	\item Oben links unter \textit{Drucker} \textcircled{\small 1} den \textbf{UniFormation GKtwo} und unter \textit{Resin} \textcircled{\small 2} das im FabLab angelegte Harzprofil \textbf{Phrozen Water-Washable Rapid Black} auswählen.
-	\item In der Statusanzeige unten links \textcircled{\small 8} kontrollieren: Drucker, Harzprofil und Schichtdicke 50\,µm. Belichtungszeiten und Schichtdicke sind im Profil fest eingestellt. Änderungen nur nach Absprache mit dem Maschinenverantwortlichen.
+	\item In der Statusanzeige unten links \textcircled{\small 7} kontrollieren: Drucker, Harzprofil und Schichtdicke 50\,µm. Belichtungszeiten und Schichtdicke sind im Profil fest eingestellt. Änderungen nur nach Absprache mit dem Maschinenverantwortlichen.
 	\item Modell per Drag-and-Drop, über \textit{Importieren} oder über \textit{Datei} \ra{} \textit{Öffnen} laden.
 	\item Bei Modellen in Zoll: Größe nach dem Laden prüfen und mit \textit{Skalieren} auf Millimeter umrechnen (Faktor 25,4).
 \end{itemize}
 
-\subsection{Layout: Ausrichten und Aushöhlen}
+\subsection{Layout: Ausrichten}
 
 Im Schritt \textit{Layout} \textcircled{\small 3} wird das Modell mit den Werkzeugen links platziert.
 
 \begin{itemize}
 	\item \textbf{Ausrichten:} Mit \textit{Bewegen}, \textit{Drehen} und \textit{Skalieren} \textcircled{\small 6} das Teil in der Regel \textbf{schräg} stellen (etwa 30--45$^\circ$). So ist jede Schicht kleiner, die Abzugskräfte sind geringer, und es entstehen keine Saugnäpfe. Große ebene Flächen nicht parallel zur Druckplattform legen. Sichtflächen möglichst von der Plattform wegdrehen, denn Stützen hinterlassen Spuren.
-	\item \textbf{Aushöhlen:} Bei massiven Teilen unter \textit{Werkzeuge} \textcircled{\small 7} das Teil aushöhlen und Ablauflöcher setzen, siehe Designrichtlinien. Das spart Harz und damit Geld.
 	\item Mehrere Teile mit \textit{Anordnen} bzw.\ \textit{Alles Anordnen} verteilen, Mindestabstand 1\,mm.
 \end{itemize}
 
-\subsection{Prepare: Stützen}
+\subsection{Prepare: Stützen, Raft und Aushöhlen}
+
+Im Schritt \textit{Prepare} \textcircled{\small 4} (Abbildung~\ref{abb.lychee}) werden Stützen, Raft und Hohlräume angelegt. Die Bereiche wählt man links aus, die Einstellungen erscheinen rechts. Die Nummern im folgenden Text beziehen sich auf Abbildung~\ref{abb.lychee-prepare}.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1pt, minimum size=4.8mm, inner sep=0pt, font=\bfseries\small}]
+		\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=\textwidth]{zeichnungen/LycheePrepare.png}};
+		\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+			\begin{scope}[line width=1pt, white]
+				\draw (0.079, 0.770) -- (0.051, 0.770);
+				\draw (0.079, 0.709) -- (0.051, 0.709);
+				\draw (0.079, 0.651) -- (0.051, 0.651);
+				\draw (0.747, 0.520) -- (0.773, 0.520);
+				\draw (0.747, 0.581) -- (0.773, 0.581);
+				\draw (0.932, 0.473) -- (0.907, 0.502);
+			\end{scope}
+			\node[marke] at (0.079, 0.770) {1};
+			\node[marke] at (0.079, 0.709) {2};
+			\node[marke] at (0.079, 0.651) {3};
+			\node[marke] at (0.747, 0.520) {4};
+			\node[marke] at (0.747, 0.581) {5};
+			\node[marke] at (0.932, 0.473) {6};
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Lychee Slicer, Schritt \textit{Prepare}: Stützen \textcircled{\small 1}, Raft \textcircled{\small 2}, Aushöhlen \textcircled{\small 3}, automatische Stützen \textcircled{\small 4}, Stützenstärke \textcircled{\small 5}, Inselerkennung \textcircled{\small 6}}
+	\label{abb.lychee-prepare}
+\end{figure}
 
 \begin{itemize}
-	\item Im Schritt \textit{Prepare} \textcircled{\small 4} Stützen automatisch erzeugen und danach prüfen. Die Inselerkennung zeigt Stellen, die ohne Stütze in der Luft entstehen würden. Dort Stützen von Hand ergänzen.
-	\item Die Teile stehen auf einem \textbf{Raft} (Sockel), der an der Druckplattform haftet. Nicht direkt auf die Plattform drucken.
+	\item \textbf{Aushöhlen:} Bei massiven Teilen unter \textit{Hollow} \textcircled{\small 3} das Teil aushöhlen und Ablauflöcher setzen, siehe Designrichtlinien. Das spart Harz und damit Geld. Erst aushöhlen, dann Stützen erzeugen.
+	\item \textbf{Stützen:} Unter \textit{Support} \textcircled{\small 1} mit \textit{Auto} \textcircled{\small 4} Stützen automatisch erzeugen. Die Stärke \textcircled{\small 5} in der Regel auf \textit{Medium} lassen, für große, schwere Teile \textit{schwer} wählen.
+	\item \textbf{Inseln prüfen:} Die Inselerkennung \textit{Island} \textcircled{\small 6} zeigt Stellen, die ohne Stütze in der Luft entstehen würden. Dort Stützen von Hand ergänzen.
+	\item \textbf{Raft:} Unter \textit{Raft} \textcircled{\small 2} den gitterförmigen Raft wählen (in der Auswahl \textbf{unten links}, siehe Abbildung~\ref{abb.lychee-raft}). Der Raft haftet an der Druckplattform und trägt die Stützen. Nicht direkt auf die Plattform drucken.
 \end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.5\textwidth]{zeichnungen/LycheeRaft.png}};
+		\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+			\draw[line width=2pt, yellow] (0.067, 0.076) rectangle (0.243, 0.430);
+		\end{scope}
+	\end{tikzpicture}
+	\caption{Raft-Auswahl in Lychee: gitterförmigen Raft unten links verwenden}
+	\label{abb.lychee-raft}
+\end{figure}
 
 \subsection{Exportieren auf den USB-Stick}
 
 \begin{itemize}
-	\item Im Schritt \textit{Exportieren} \textcircled{\small 5} die Druckdatei erzeugen und auf den \textbf{USB-Stick des Druckers} speichern. Dateiname eindeutig wählen, z.\,B. \enquote{Max\_Mustermann\_Dateiname}.
-	\item Unten links \textcircled{\small 8} mit \textit{Estimate resin volume} den \textbf{Harzverbrauch in ml} anzeigen lassen und \textbf{notieren}. Er wird zum Bezahlen gebraucht. Daneben lässt sich die Druckzeit abschätzen.
+	\item Im Schritt \textit{Exportieren} \textcircled{\small 5} (Abbildung~\ref{abb.lychee}) die Druckdatei erzeugen und auf den \textbf{USB-Stick des Druckers} speichern. Dateiname eindeutig wählen, z.\,B. \enquote{Max\_Mustermann\_Dateiname}.
+	\item Unten links \textcircled{\small 7} (Abbildung~\ref{abb.lychee}) mit \textit{Estimate resin volume} den \textbf{Harzverbrauch in ml} anzeigen lassen und \textbf{notieren}. Er wird zum Bezahlen gebraucht. Daneben lässt sich die Druckzeit abschätzen.
 	\item Der Drucker ist \textbf{nicht im Netzwerk}. Druckdateien kommen nur per USB-Stick auf den Drucker.
 \end{itemize}
 
