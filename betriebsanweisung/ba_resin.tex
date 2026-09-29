@@ -1,23 +1,24 @@
 % =====================================================================
 %  Betriebsanweisung (Gefahrstoff) Phrozen Water-Washable Rapid Black
-%  (wird von SLA_Drucker_Einweisung.tex eingebunden)
+%  Eigenes PDF: Betriebsanweisung_Resin.tex, Seite in der Einweisung über \BAseite
 %  Grundlage: Kennzeichnung von Phrozen Water-Washable Resin Schwarz
 %  (Rapid Black) laut EU-Händlerangabe (3djake.de, Stand 28.09.2026):
 %  GHS05, GHS07, GHS08, GHS09, Signalwort Gefahr,
 %  H315, H317, H318, H335, H360FD, H373, H410.
 %  Das Sicherheitsdatenblatt des Herstellers muss im FabLab vorliegen.
 % =====================================================================
+\BAsetup{
+  typ=gefahrstoff,
+  titel={Phrozen Water-Washable Rapid Black -- flüssiges Photopolymer-Harz auf Acrylatbasis},
+  kurztitel={Gefahrstoff: Phrozen Water-Washable Rapid Black},
+  taetigkeit={Drucken, Waschen im Form Wash (Wasser), Nachhärten, Harz einfüllen, Entsorgung},
+  nummer=BA-GS-01,
+  stand=28.09.2026,
+  verantwortlich={Name der verantwortlichen Person},
+  signalwort=GEFAHR,
+}
 
-\BAgefahrstofffarbe
-\renewcommand{\BAgrundlage}{gemäß § 14 GefStoffV und TRGS 555}
-\renewcommand{\BAgeraetlabel}{Gefahrstoff:}
-\renewcommand{\BAgeraet}{Phrozen Water-Washable Rapid Black -- flüssiges Photopolymer-Harz
-  auf Acrylatbasis}
-\renewcommand{\BAnummer}{BA-GS-01}
-% Signalwort im Kopf, Piktogramme im Abschnitt Gefahren
-\renewcommand{\BAgeraetbilder}{{\bfseries\large GEFAHR}}
-
-\BAkopf{Drucken, Waschen im Form Wash (Wasser), Nachhärten, Harz einfüllen, Entsorgung}
+\BAkopf
 
 % ---------- 1 Gefahren -----------------------------------------------
 \BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{GHS08,GHS05,GHS07,GHS09}{%

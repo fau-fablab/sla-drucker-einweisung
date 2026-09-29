@@ -12,11 +12,7 @@
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
 \usepackage{float} % Ermöglicht H als Platzierungsoption
 \usepackage{qrcode}
-\usepackage{betriebsanweisung/ba-layout}
-
-% Stammdaten der Betriebsanweisungen
-% (Inhalt: betriebsanweisung/inhalt_gktwo.tex und betriebsanweisung/inhalt_resin.tex)
-\input{betriebsanweisung/stammdaten}
+\usepackage{fablab-document/fablab-ba}
 
 \newcommand{\ra}{$\Rightarrow$}
 
@@ -54,12 +50,12 @@ Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Nach der Einweisung u
 \subsection{Gefahren und Schutzausrüstung}
 
 \begin{center}
-	\includegraphics[height=11mm]{GHS05}\quad
-	\includegraphics[height=11mm]{GHS07}\quad
-	\includegraphics[height=11mm]{GHS08}\quad
-	\includegraphics[height=11mm]{GHS09}\qquad\qquad
-	\includegraphics[height=11mm]{M004}\quad
-	\includegraphics[height=11mm]{M009}
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/GHS05}\quad
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/GHS07}\quad
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/GHS08}\quad
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/GHS09}\qquad\qquad
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/M004}\quad
+	\includegraphics[height=11mm]{fablab-document/ba-symbole/M009}
 \end{center}
 
 \begin{itemize}
@@ -74,23 +70,9 @@ Zusätzlich gelten die \textbf{Betriebsanweisungen} für den Drucker (Abschnitt~
 
 \newpage
 
-% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
-\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
-\thispagestyle{empty}
-\refstepcounter{section}\label{sec:ba-gktwo}
-\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung UniFormation GKtwo}
-{\small\input{betriebsanweisung/inhalt_gktwo}}
-\restoregeometry
-\newpage
-
-% Gefahrstoff-Betriebsanweisung für das Harz
-\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
-\thispagestyle{empty}
-\refstepcounter{section}\label{sec:ba-resin}
-\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung Gefahrstoff: Phrozen Water-Washable Rapid Black}
-{\small\input{betriebsanweisung/inhalt_resin}}
-\restoregeometry
-\newpage
+% Betriebsanweisungen als ganze Seiten im Format des Aushangs am Drucker
+\BAseite[sec:ba-gktwo]{betriebsanweisung/ba_gktwo}
+\BAseite[sec:ba-resin]{betriebsanweisung/ba_resin}
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
 \setcounter{tocdepth}{2}
