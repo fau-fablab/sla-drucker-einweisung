@@ -1,24 +1,28 @@
 % =====================================================================
 %  Betriebsanweisung (Arbeitsmittel) UniFormation GKtwo
-%  (wird von SLA_Drucker_Einweisung.tex eingebunden)
+%  Eigenes PDF: Betriebsanweisung_SLA_Drucker.tex, Seite in der Einweisung
+%  über \BAseite. Layout: fablab-document/fablab-ba.sty
 % =====================================================================
-
-\BAgeraetefarbe
-\renewcommand{\BAgrundlage}{gemäß § 12 BetrSichV und § 4 DGUV Vorschrift 1}
-\renewcommand{\BAgeraetlabel}{Arbeitsmittel:}
-\renewcommand{\BAgeraet}{Resin-3D-Drucker UniFormation GKtwo (MSLA, LCD-Belichtung 405\,nm, beheizter Harztank)}
-\renewcommand{\BAnummer}{BA-SLA-01}
-% Gerätebild: schematischer Resin-Drucker mit grüner UV-Schutzhaube
-\renewcommand{\BAgeraetbilder}{%
+\BAsetup{
+  typ=maschine,
+  titel={Resin-3D-Drucker UniFormation GKtwo (MSLA, LCD-Belichtung 405\,nm, beheizter Harztank)},
+  kurztitel={UniFormation GKtwo},
+  taetigkeit={Drucken, Harz einfüllen, Teileentnahme, Reinigung},
+  nummer=BA-SLA-01,
+  stand=28.09.2026,
+  verantwortlich={Name der verantwortlichen Person},
+  % Gerätebild: schematischer Resin-Drucker mit grüner UV-Schutzhaube
+  bildcode={%
   \begin{tikzpicture}[x=1mm, y=1mm, line width=0.5pt]
     \fill[black!70, rounded corners=0.8mm] (0,0) rectangle (16,5);
     \fill[green!55!black, opacity=0.8, rounded corners=0.8mm] (0.8,5) rectangle (15.2,20);
     \fill[black!45] (7.3,6) rectangle (8.7,18.5);
     \fill[black!60] (3.5,12) rectangle (12.5,13.5);
     \fill[white, opacity=0.6] (2.5,2.2) rectangle (6.5,3.8);
-  \end{tikzpicture}}
+  \end{tikzpicture}},
+}
 
-\BAkopf{Drucken, Harz einfüllen, Teileentnahme, Reinigung}
+\BAkopf
 
 % ---------- 1 Anwendungsbereich --------------------------------------
 \BAblock{ANWENDUNGSBEREICH}{M002}{%
@@ -77,7 +81,7 @@
   \textbf{Notruf: 112}\qquad FabLab: 09131\,/\,85\,28013}
 
 % ---------- 6 Instandhaltung / Entsorgung (mit Fußzeile) --------------
-\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M006}{%
+\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M021}{%
   \begin{itemize}
     \item Wartung nur durch Betreuer; Folie und Filter nur im
           ausgeschalteten Zustand tauschen.

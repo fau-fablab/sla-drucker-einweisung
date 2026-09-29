@@ -1,2 +1,2 @@
-TARGET=SLA_Drucker_Einweisung SLA_Drucker_Einweisungsliste
+TARGET=SLA_Drucker_Einweisung SLA_Drucker_Einweisungsliste Betriebsanweisung_SLA_Drucker Betriebsanweisung_Resin
 include fablab-document/Makefile.include
